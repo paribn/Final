@@ -12,8 +12,8 @@ using Spotify_API.Data;
 namespace Spotify_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240202133937_initialmigration")]
-    partial class initialmigration
+    [Migration("20240203064014_create_all_table")]
+    partial class create_all_table
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,9 +173,6 @@ namespace Spotify_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("GroupId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
@@ -186,8 +183,6 @@ namespace Spotify_API.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ArtistId");
-
-                    b.HasIndex("GroupId");
 
                     b.ToTable("Albums");
                 });
@@ -282,16 +277,11 @@ namespace Spotify_API.Migrations
                     b.Property<int>("ArtistType")
                         .HasColumnType("int");
 
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GroupId");
 
                     b.ToTable("Artists");
                 });
@@ -316,7 +306,7 @@ namespace Spotify_API.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("ArtistGenre");
+                    b.ToTable("ArtistGenres");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.Genre", b =>
@@ -336,19 +326,6 @@ namespace Spotify_API.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("Spotify_API.Entities.Group", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Groups");
-                });
-
             modelBuilder.Entity("Spotify_API.Entities.Music", b =>
                 {
                     b.Property<int>("Id")
@@ -360,13 +337,10 @@ namespace Spotify_API.Migrations
                     b.Property<int?>("AlbumId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ArtistId")
+                    b.Property<int?>("ArtistId")
                         .HasColumnType("int");
 
                     b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("GroupId")
                         .HasColumnType("int");
 
                     b.Property<int>("ListenCount")
@@ -381,8 +355,6 @@ namespace Spotify_API.Migrations
                     b.HasIndex("AlbumId");
 
                     b.HasIndex("ArtistId");
-
-                    b.HasIndex("GroupId");
 
                     b.ToTable("Musics");
                 });
@@ -519,22 +491,7 @@ namespace Spotify_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Spotify_API.Entities.Group", null)
-                        .WithMany("Albums")
-                        .HasForeignKey("GroupId");
-
                     b.Navigation("Artist");
-                });
-
-            modelBuilder.Entity("Spotify_API.Entities.Artist", b =>
-                {
-                    b.HasOne("Spotify_API.Entities.Group", "Group")
-                        .WithMany("Artists")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Group");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.ArtistGenre", b =>
@@ -564,19 +521,11 @@ namespace Spotify_API.Migrations
 
                     b.HasOne("Spotify_API.Entities.Artist", "Artist")
                         .WithMany("Musics")
-                        .HasForeignKey("ArtistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Spotify_API.Entities.Group", "Group")
-                        .WithMany("Musics")
-                        .HasForeignKey("GroupId");
+                        .HasForeignKey("ArtistId");
 
                     b.Navigation("Album");
 
                     b.Navigation("Artist");
-
-                    b.Navigation("Group");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.MusicGenre", b =>
@@ -652,15 +601,6 @@ namespace Spotify_API.Migrations
                     b.Navigation("ArtistGenres");
 
                     b.Navigation("MusicGenres");
-                });
-
-            modelBuilder.Entity("Spotify_API.Entities.Group", b =>
-                {
-                    b.Navigation("Albums");
-
-                    b.Navigation("Artists");
-
-                    b.Navigation("Musics");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.Music", b =>

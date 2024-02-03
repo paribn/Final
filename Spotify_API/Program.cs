@@ -24,7 +24,6 @@ namespace Spotify_API
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
 
 
@@ -33,6 +32,11 @@ namespace Spotify_API
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
 
             builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
             {
@@ -96,6 +100,7 @@ namespace Spotify_API
             });
 
 
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             builder.Services.AddSingleton<IJwtTokenService, JwtTokenService>();
 
