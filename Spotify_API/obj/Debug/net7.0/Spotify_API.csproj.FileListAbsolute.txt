@@ -9,10 +9,12 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Azure.Identity.dll
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\FluentValidation.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\MailKit.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -42,6 +44,7 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\MimeKit.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
@@ -54,6 +57,7 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Memory.Data.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Runtime.Caching.dll
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Security.Permissions.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Windows.Extensions.dll
@@ -67,6 +71,7 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.csproj.AssemblyReference.cache
@@ -90,8 +95,3 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.pdb
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.genruntimeconfig.cache
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\ref\Spotify_API.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\MailKit.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\MimeKit.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

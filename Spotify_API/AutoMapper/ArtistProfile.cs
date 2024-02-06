@@ -15,13 +15,8 @@ namespace Spotify_API.AutoMapper
             .ForMember(dest => dest.ArtistType, opt => opt.MapFrom(src => src.ArtistTypes))
             .ReverseMap();  /// burada yalnizz artissst add olur 
 
-            //CreateMap<AlbumPostDto, Album>().ReverseMap();
+            CreateMap<ArtistPutDto, Artist>().ReverseMap();
 
-
-
-            //CreateMap<AlbumPostDto, Album>().ReverseMap();
-            //CreateMap<MusicPostDto, Music>().ReverseMap();
-            //CreateMap<GenrePostDto, Genre>().ReverseMap();    bunlar helelik istifade edilmir 
         }
 
     }

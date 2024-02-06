@@ -38,7 +38,7 @@ namespace Spotify_API.Controllers
 
         // POST api/<AlbumController>
         [HttpPost("AlbumPost")]
-        public IActionResult Post([FromBody] AlbumPostDto dto)
+        public IActionResult Post([FromForm] AlbumPostDto dto)
         {
 
             if (!ModelState.IsValid) return BadRequest();

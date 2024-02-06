@@ -30,7 +30,7 @@ namespace Spotify_API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
+        public async Task<IActionResult> Register([FromForm] RegisterDto registerDto)
         {
             var user = new AppUser
             {
@@ -43,10 +43,14 @@ namespace Spotify_API.Controllers
             var result = await _userManager.CreateAsync(user, registerDto.Password);
             if (!result.Succeeded) return BadRequest();
 
-            await _userManager.AddToRoleAsync(user, Roles.Artist.ToString()); //// artist user yaranmayibb ,
+            await _userManager.AddToRoleAsync(user, Roles.Admin.ToString()); //// artist user yaranmayibb ,
 
             return Ok(result);
         }
+
+
+
+
 
 
         [HttpPost("Login")]
@@ -64,7 +68,6 @@ namespace Spotify_API.Controllers
             var token = jwtTokenService.GenerateToken(user.FullName, user.UserName, roles);
 
 
-
             return Ok(token);
 
         }
@@ -79,6 +82,16 @@ namespace Spotify_API.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null) return BadRequest();
+
+            await _accountService.ConfirmEmailAsync(userId, token);
+
+            return Redirect("http://localhost:5159/Login");
+        }
+
 
         [HttpPost("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword([FromForm] ForgotPasswordDto forgotPasswordDto)
@@ -90,7 +103,7 @@ namespace Spotify_API.Controllers
 
                 var token = await _userManager.GeneratePasswordResetTokenAsync(exsistUser);
 
-                var link = $"http://localhost:3000/ResetPassword?email={exsistUser.Email}&token={HttpUtility.UrlEncode(token)}";
+                var link = $"http://localhost:5159/ResetPassword?email={exsistUser.Email}&token={HttpUtility.UrlEncode(token)}";
 
                 if (link == null) throw new NullReferenceException(nameof(link));
 
@@ -108,7 +121,7 @@ namespace Spotify_API.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost("Reset Password")]
         public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordDto resetPasswordDto)
         {
             try
@@ -128,7 +141,7 @@ namespace Spotify_API.Controllers
 
                 await _accountService.ResetPassword(resetPasswordDto);
 
-                return Redirect("http://localhost:3000/Login");
+                return Redirect("http://localhost:5159/Login");
             }
             catch (Exception ex)
             {

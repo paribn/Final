@@ -74,6 +74,10 @@ namespace Spotify_API
                  };
              });
 
+            builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IEmailService, EmailService>();
+            builder.Services.AddScoped<IFileService, FileService>();
+
             builder.Services.AddSwaggerGen(opt =>
             {
                 opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -102,7 +106,21 @@ namespace Spotify_API
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+
+
             builder.Services.AddSingleton<IJwtTokenService, JwtTokenService>();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+
+            });
 
             var app = builder.Build();
 

@@ -13,11 +13,6 @@ namespace Spotify_API.AutoMapper
                           .ForMember(dest => dest.ArtistId, opt => opt.MapFrom(src => src.ArtisId))
                           .ReverseMap();
 
-
-
-
-
-            //CreateMap<MusicPostDto, Music>().ReverseMap();
         }
     }
 }
