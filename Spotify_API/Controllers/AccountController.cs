@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.Account;
 using Spotify_API.Entities;
-using Spotify_API.Helpers.Enum;
 using Spotify_API.Services.Abstract;
 using System.Web;
+using static Spotify_API.DTO.Account.RegisterDto;
 using static Spotify_API.DTO.Account.ResetPasswordDto;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -32,43 +32,56 @@ namespace Spotify_API.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromForm] RegisterDto registerDto)
         {
-            var user = new AppUser
+            try
             {
-                FullName = registerDto.FullName,
-                Gender = registerDto.Gender,
-                BirthDate = registerDto.BirthDate,
-                Email = registerDto.Email,
-                UserName = registerDto.Email
-            };
-            var result = await _userManager.CreateAsync(user, registerDto.Password);
-            if (!result.Succeeded) return BadRequest();
+                RegisterDtoValidator validator = new();
 
-            await _userManager.AddToRoleAsync(user, Roles.Admin.ToString()); //// artist user yaranmayibb ,
+                var validationResult = validator.Validate(registerDto);
 
-            return Ok(result);
+                if (!validationResult.IsValid)
+                {
+                    var response = new ApiResponse
+                    {
+                        ErrorMessage = validationResult.Errors.Select(m => m.ErrorMessage).ToList(),
+                        StatusMessage = "Failed"
+                    };
+                    return BadRequest(response);
+                }
+
+                await _accountService.RegisterAsync(registerDto);
+
+                var user = await _userManager.FindByEmailAsync(registerDto.Email);
+
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
+                //var link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token },
+                //    Request.Scheme, Request.Host.ToString());
+
+                //if (link == null) throw new NullReferenceException(nameof(link));
+
+                //_emailService.Register(registerDto, link);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new ApiResponse { ErrorMessage = new List<string> { ex.Message } });
+            }
         }
 
 
 
-
-
-
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto login, [FromServices] IJwtTokenService jwtTokenService)
+        public async Task<IActionResult> Login([FromBody] LoginDto login)
         {
-            var user = await _userManager.FindByEmailAsync(login.Email);
-            if (user == null) return NotFound();
-
-            var CheckPassword = await _userManager.CheckPasswordAsync(user, login.Password);
-            if (!CheckPassword) return NotFound();
-
-
-            var roles = (await _userManager.GetRolesAsync(user)).ToList();
-
-            var token = jwtTokenService.GenerateToken(user.FullName, user.UserName, roles);
-
-
-            return Ok(token);
+            try
+            {
+                return Ok(await _accountService.LoginAsync(login));
+            }
+            catch (Exception)
+            {
+                return BadRequest("UserName or Password wrong.");
+            }
 
         }
 
@@ -121,7 +134,7 @@ namespace Spotify_API.Controllers
 
 
 
-        [HttpPost("Reset Password")]
+        [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordDto resetPasswordDto)
         {
             try

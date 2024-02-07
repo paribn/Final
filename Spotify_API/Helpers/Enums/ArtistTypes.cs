@@ -3,6 +3,6 @@
     public enum ArtistTypes
     {
         SingleArtist,
-        GroupArtist
+        Band
     }
 }

@@ -9,7 +9,7 @@ namespace Spotify_API.DTO.Artist
 
         public ArtistTypes ArtistTypes { get; set; }
 
-        public List<int> GenreId { get; set; }
+        //public List<int> GenreId { get; set; }
 
         //public List<AlbumPostDto>? AlbumPostDtos { get; set; }
         //public List<GenrePostDto>? GenrePostDtos { get; set; }

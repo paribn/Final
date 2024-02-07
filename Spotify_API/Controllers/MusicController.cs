@@ -44,7 +44,15 @@ namespace Spotify_API.Controllers
 
             var music = new Music();
 
+
+
             _mapper.Map(dto, music);
+
+            //foreach (var item in collection)
+            //{
+
+            //}
+
             _context.Musics.Add(music);
             _context.SaveChanges();
             return Ok(music.Id);

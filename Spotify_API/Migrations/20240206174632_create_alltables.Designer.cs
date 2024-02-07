@@ -12,8 +12,8 @@ using Spotify_API.Data;
 namespace Spotify_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240205152157_change_column")]
-    partial class change_column
+    [Migration("20240206174632_create_alltables")]
+    partial class create_alltables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -169,11 +169,9 @@ namespace Spotify_API.Migrations
                     b.Property<int>("ArtistId")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("CoverImage")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("CoverImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -194,8 +192,8 @@ namespace Spotify_API.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -285,29 +283,6 @@ namespace Spotify_API.Migrations
                     b.ToTable("Artists");
                 });
 
-            modelBuilder.Entity("Spotify_API.Entities.ArtistGenre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ArtistId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ArtistId");
-
-                    b.HasIndex("GenreId");
-
-                    b.ToTable("ArtistGenres");
-                });
-
             modelBuilder.Entity("Spotify_API.Entities.Genre", b =>
                 {
                     b.Property<int>("Id")
@@ -344,6 +319,14 @@ namespace Spotify_API.Migrations
 
                     b.Property<int>("ListenCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("MusicUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -493,25 +476,6 @@ namespace Spotify_API.Migrations
                     b.Navigation("Artist");
                 });
 
-            modelBuilder.Entity("Spotify_API.Entities.ArtistGenre", b =>
-                {
-                    b.HasOne("Spotify_API.Entities.Artist", "Artist")
-                        .WithMany("ArtistGenres")
-                        .HasForeignKey("ArtistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Spotify_API.Entities.Genre", "Genre")
-                        .WithMany("ArtistGenres")
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Artist");
-
-                    b.Navigation("Genre");
-                });
-
             modelBuilder.Entity("Spotify_API.Entities.Music", b =>
                 {
                     b.HasOne("Spotify_API.Entities.Album", "Album")
@@ -590,15 +554,11 @@ namespace Spotify_API.Migrations
                 {
                     b.Navigation("Albums");
 
-                    b.Navigation("ArtistGenres");
-
                     b.Navigation("Musics");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.Genre", b =>
                 {
-                    b.Navigation("ArtistGenres");
-
                     b.Navigation("MusicGenres");
                 });
 

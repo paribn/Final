@@ -1,8 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Spotify_API.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.Artist;
-using Spotify_API.Entities;
+using Spotify_API.Services.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,13 +10,11 @@ namespace Spotify_API.Controllers
     [ApiController]
     public class ArtistController : ControllerBase
     {
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
+        private readonly IArtistService _artist;
 
-        public ArtistController(AppDbContext appDbContext, IMapper mapper)
+        public ArtistController(IArtistService artistService)
         {
-            _context = appDbContext;
-            _mapper = mapper;
+            _artist = artistService;
         }
 
 
@@ -38,29 +34,32 @@ namespace Spotify_API.Controllers
 
         // POST api/<ArtistController>
         [HttpPost("CreateArtist")]
-        public IActionResult Post([FromBody] ArtistPostDto dto)
+        public async Task<IActionResult> Post([FromBody] ArtistPostDto dto)
         {
-            if (!ModelState.IsValid) return BadRequest();
-
-            var artist = new Artist();
-
-            _mapper.Map(dto, artist);
-            _context.Artists.Add(artist);
-            _context.SaveChanges();
-            return Ok(artist.Id);
+            try
+            {
+                await _artist.CreateAsync(dto);
+                return Ok("Artist created successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating artist: {ex.Message}");
+            }
         }
 
         // PUT api/<ArtistController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] ArtistPutDto dto)
+        public async Task<IActionResult> Put(int id, [FromBody] ArtistPutDto dto)
         {
-            var option = _context.Artists.FirstOrDefault(x => x.Id == id);
-            if (option is null) return NotFound("was not found");
-
-            _mapper.Map(dto, option);
-
-            _context.SaveChanges();
-            return Ok(option.Id);
+            try
+            {
+                await _artist.UpdateAsync(id, dto);
+                return Ok("change"); // Başarılı işlem durumunda 200 OK yanıtı
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message); // Sanatçı bulunamadığı durumda 404 Not Found yanıtı
+            }
         }
 
         // DELETE api/<ArtistController>/5

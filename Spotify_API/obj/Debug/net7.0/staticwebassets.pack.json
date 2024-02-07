@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg67c34a89-aed7-472b-aa4f-5485a1ae66d5.jpeg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg67c34a89-aed7-472b-aa4f-5485a1ae66d5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg7ea3edbb-8181-4163-9f11-c78b24c70df6.jpeg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg7ea3edbb-8181-4163-9f11-c78b24c70df6.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Spotify_API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Spotify_API.props",
+      "PackagePath": "build\\Spotify_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Spotify_API.props",
+      "PackagePath": "buildMultiTargeting\\Spotify_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Spotify_API.props",
+      "PackagePath": "buildTransitive\\Spotify_API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -10,8 +10,11 @@ namespace Spotify_API.AutoMapper
         {
 
             CreateMap<AlbumPostDto, Album>()
+                            .ForMember(dest => dest.CoverImage, opt => opt.MapFrom(src => src.CoverImage))
                           .ForMember(dest => dest.ArtistId, opt => opt.MapFrom(src => src.ArtisId))
                           .ReverseMap();
+
+            CreateMap<AlbumPutDto, Album>().ReverseMap();
 
         }
     }

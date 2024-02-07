@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Spotify_API.Migrations
 {
     /// <inheritdoc />
-    public partial class create_all_table : Migration
+    public partial class create_alltables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,7 +46,7 @@ namespace Spotify_API.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -88,7 +88,6 @@ namespace Spotify_API.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CoverImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ArtistId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -231,32 +230,6 @@ namespace Spotify_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ArtistGenres",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ArtistId = table.Column<int>(type: "int", nullable: false),
-                    GenreId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ArtistGenres", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ArtistGenres_Artists_ArtistId",
-                        column: x => x.ArtistId,
-                        principalTable: "Artists",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ArtistGenres_Genres_GenreId",
-                        column: x => x.GenreId,
-                        principalTable: "Genres",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Musics",
                 columns: table => new
                 {
@@ -265,6 +238,8 @@ namespace Spotify_API.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Duration = table.Column<int>(type: "int", nullable: false),
                     ListenCount = table.Column<int>(type: "int", nullable: false),
+                    MusicUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ArtistId = table.Column<int>(type: "int", nullable: true),
                     AlbumId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -339,16 +314,6 @@ namespace Spotify_API.Migrations
                 name: "IX_Albums_ArtistId",
                 table: "Albums",
                 column: "ArtistId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ArtistGenres_ArtistId",
-                table: "ArtistGenres",
-                column: "ArtistId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ArtistGenres_GenreId",
-                table: "ArtistGenres",
-                column: "GenreId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -428,9 +393,6 @@ namespace Spotify_API.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ArtistGenres");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 

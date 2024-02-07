@@ -74,9 +74,15 @@ namespace Spotify_API
                  };
              });
 
+            builder.Services.AddSingleton<IJwtTokenService, JwtTokenService>();
             builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddScoped<IFileService, FileService>();
+            builder.Services.AddScoped<IAlbumService, AlbumService>();
+
+            builder.Services.AddScoped<IArtistService, ArtistService>();
+
+
 
             builder.Services.AddSwaggerGen(opt =>
             {
@@ -108,7 +114,6 @@ namespace Spotify_API
 
 
 
-            builder.Services.AddSingleton<IJwtTokenService, JwtTokenService>();
 
             builder.Services.AddCors(options =>
             {

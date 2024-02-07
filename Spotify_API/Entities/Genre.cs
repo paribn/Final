@@ -6,6 +6,5 @@
         public string Name { get; set; }
 
         public List<MusicGenre> MusicGenres { get; set; }
-        public List<ArtistGenre> ArtistGenres { get; set; }
     }
 }

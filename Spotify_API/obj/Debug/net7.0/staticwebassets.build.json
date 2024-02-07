@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "e5dH1jCKd/loBwEaCF1Qd7rwbwnEoFh1Xq4Sxp7bD/k=",
+  "Hash": "lVeGXBuPN0Mf3raTZmk4ch7T6cj0q5Lw6V5bJU+eTbc=",
   "Source": "Spotify_API",
   "BasePath": "_content/Spotify_API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Spotify_API\\wwwroot",
+      "Source": "Spotify_API",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg67c34a89-aed7-472b-aa4f-5485a1ae66d5.jpeg",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "musicAlbomimg/Eminem withoutme.jpeg67c34a89-aed7-472b-aa4f-5485a1ae66d5.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg67c34a89-aed7-472b-aa4f-5485a1ae66d5.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg7ea3edbb-8181-4163-9f11-c78b24c70df6.jpeg",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "musicAlbomimg/Eminem withoutme.jpeg7ea3edbb-8181-4163-9f11-c78b24c70df6.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg7ea3edbb-8181-4163-9f11-c78b24c70df6.jpeg"
+    }
+  ]
 }
