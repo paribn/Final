@@ -12,8 +12,8 @@ using Spotify_API.Data;
 namespace Spotify_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240206174632_create_alltables")]
-    partial class create_alltables
+    [Migration("20240207191447_update")]
+    partial class update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -343,44 +343,28 @@ namespace Spotify_API.Migrations
 
             modelBuilder.Entity("Spotify_API.Entities.MusicGenre", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("MusicId")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MusicId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("MusicId", "GenreId");
 
                     b.HasIndex("GenreId");
-
-                    b.HasIndex("MusicId");
 
                     b.ToTable("MusicGenres");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.MusicPlayList", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<int>("MusicId")
                         .HasColumnType("int");
 
                     b.Property<int>("PlayListId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("MusicId");
+                    b.HasKey("MusicId", "PlayListId");
 
                     b.HasIndex("PlayListId");
 
@@ -500,7 +484,7 @@ namespace Spotify_API.Migrations
                         .IsRequired();
 
                     b.HasOne("Spotify_API.Entities.Music", "Music")
-                        .WithMany("Genres")
+                        .WithMany("MusicGenres")
                         .HasForeignKey("MusicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -564,7 +548,7 @@ namespace Spotify_API.Migrations
 
             modelBuilder.Entity("Spotify_API.Entities.Music", b =>
                 {
-                    b.Navigation("Genres");
+                    b.Navigation("MusicGenres");
 
                     b.Navigation("MusicPlayLists");
                 });

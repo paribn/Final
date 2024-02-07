@@ -38,23 +38,28 @@ namespace Spotify_API.Controllers
 
         // POST api/<MusicController>
         [HttpPost]
-        public IActionResult Post([FromBody] MusicPostDto dto)
+        public async Task<IActionResult> Post([FromBody] MusicPostDto dto)
         {
-            if (!ModelState.IsValid) return BadRequest();
+            var music = _mapper.Map<Music>(dto);
 
-            var music = new Music();
-
-
-
-            _mapper.Map(dto, music);
-
-            //foreach (var item in collection)
+            // GenrePostDto listesini dönerek her bir türü ara
+            //foreach (var genreDto in dto.GenrePostDtos)
             //{
-
+            //    var genre = await _context.Genres.FirstOrDefaultAsync(x => x.Name == genreDto.Name);
+            //    if (genre != null)
+            //    {
+            //        // Genre bulunduğunda Music nesnesine ekle
+            //        music.MusicGenres.Add(new MusicGenre { GenreId = genre.Id });
+            //    }
+            //    else
+            //    {
+            //        // Eşleşen bir tür bulunamazsa uygun bir hata mesajı döndür
+            //        return NotFound("No matching genre found for: " + genreDto.Name);
+            //    }
             //}
 
             _context.Musics.Add(music);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return Ok(music.Id);
         }
 

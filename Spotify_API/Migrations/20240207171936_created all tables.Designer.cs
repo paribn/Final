@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Spotify_API.Data;
 
@@ -11,9 +12,11 @@ using Spotify_API.Data;
 namespace Spotify_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240207171936_created all tables")]
+    partial class createdalltables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -355,13 +358,21 @@ namespace Spotify_API.Migrations
 
             modelBuilder.Entity("Spotify_API.Entities.MusicPlayList", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("MusicId")
                         .HasColumnType("int");
 
                     b.Property<int>("PlayListId")
                         .HasColumnType("int");
 
-                    b.HasKey("MusicId", "PlayListId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("MusicId");
 
                     b.HasIndex("PlayListId");
 

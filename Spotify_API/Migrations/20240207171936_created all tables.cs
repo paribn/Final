@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Spotify_API.Migrations
 {
     /// <inheritdoc />
-    public partial class create_alltables : Migration
+    public partial class createdalltables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -262,14 +262,12 @@ namespace Spotify_API.Migrations
                 name: "MusicGenres",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     MusicId = table.Column<int>(type: "int", nullable: false),
                     GenreId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MusicGenres", x => x.Id);
+                    table.PrimaryKey("PK_MusicGenres", x => new { x.MusicId, x.GenreId });
                     table.ForeignKey(
                         name: "FK_MusicGenres_Genres_GenreId",
                         column: x => x.GenreId,
@@ -358,11 +356,6 @@ namespace Spotify_API.Migrations
                 name: "IX_MusicGenres_GenreId",
                 table: "MusicGenres",
                 column: "GenreId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MusicGenres_MusicId",
-                table: "MusicGenres",
-                column: "MusicId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MusicPlayLists_MusicId",

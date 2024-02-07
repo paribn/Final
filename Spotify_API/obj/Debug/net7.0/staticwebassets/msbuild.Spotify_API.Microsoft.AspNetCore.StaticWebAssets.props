@@ -1,5 +1,37 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg4ada4283-a615-4ea8-a842-28299ff1f22b.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>musicAlbomimg/Eminem withoutme.jpeg4ada4283-a615-4ea8-a842-28299ff1f22b.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg4ada4283-a615-4ea8-a842-28299ff1f22b.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg4b036432-1465-4b31-bd25-03e017b44409.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>musicAlbomimg/Eminem withoutme.jpeg4b036432-1465-4b31-bd25-03e017b44409.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg4b036432-1465-4b31-bd25-03e017b44409.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg67c34a89-aed7-472b-aa4f-5485a1ae66d5.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
@@ -31,6 +63,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg7ea3edbb-8181-4163-9f11-c78b24c70df6.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpega5b0fa34-b123-45f1-8a25-2d15830f8ee4.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>musicAlbomimg/Eminem withoutme.jpega5b0fa34-b123-45f1-8a25-2d15830f8ee4.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpega5b0fa34-b123-45f1-8a25-2d15830f8ee4.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

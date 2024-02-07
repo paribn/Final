@@ -1,5 +1,6 @@
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\appsettings.json
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Spotify_API.staticwebassets.runtime.json
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Spotify_API.exe
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Spotify_API.deps.json
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Spotify_API.runtimeconfig.json
@@ -95,4 +96,3 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.pdb
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.genruntimeconfig.cache
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\ref\Spotify_API.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Spotify_API.staticwebassets.runtime.json

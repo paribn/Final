@@ -12,6 +12,7 @@ namespace Spotify_API.AutoMapper
             CreateMap<MusicPostDto, Music>().ReverseMap();
 
 
+
             CreateMap<GenrePostDto, Genre>()
                  .ReverseMap();
 
