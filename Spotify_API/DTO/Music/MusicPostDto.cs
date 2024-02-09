@@ -8,13 +8,12 @@
 
         public string MusicUrl { get; set; }
 
-        public string PhotoUrl { get; set; }
+        public IFormFile PhotoUrl { get; set; }
 
 
         public int AlbumId { get; set; }
         public int ArtistId { get; set; }
 
-        public List<int>? PlayListId { get; set; }
 
         public List<int>? GenreId { get; set; }
         //public List<GenrePostDto> GenrePostDtos { get; set; }

@@ -79,9 +79,10 @@ namespace Spotify_API
             builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddScoped<IFileService, FileService>();
             builder.Services.AddScoped<IAlbumService, AlbumService>();
-
+            builder.Services.AddScoped<IGenreService, GenreService>();
             builder.Services.AddScoped<IArtistService, ArtistService>();
-
+            builder.Services.AddScoped<IMusicService, MusicService>();
+            builder.Services.AddScoped<IPlaylistService, PlaylistService>();
 
 
             builder.Services.AddSwaggerGen(opt =>
@@ -111,8 +112,6 @@ namespace Spotify_API
 
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-
 
 
             builder.Services.AddCors(options =>

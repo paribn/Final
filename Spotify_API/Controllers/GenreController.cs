@@ -1,8 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Spotify_API.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.Genre;
-using Spotify_API.Entities;
+using Spotify_API.Services.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,13 +10,10 @@ namespace Spotify_API.Controllers
     [ApiController]
     public class GenreController : ControllerBase
     {
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
-
-        public GenreController(AppDbContext appDbContext, IMapper mapper)
+        private readonly IGenreService _genreService;
+        public GenreController(IGenreService genreService)
         {
-            _context = appDbContext;
-            _mapper = mapper;
+            _genreService = genreService;
         }
 
 
@@ -38,15 +33,17 @@ namespace Spotify_API.Controllers
 
         // POST api/<GenreController>
         [HttpPost]
-        public IActionResult Post([FromBody] GenrePostDto dto)
+        public async Task<IActionResult> Post([FromBody] GenrePostDto dto)
         {
-            if (!ModelState.IsValid) return BadRequest();
-            var genre = new Genre();
-
-            _mapper.Map(dto, genre);
-            _context.Genres.Add(genre);
-            _context.SaveChanges();
-            return Ok(genre.Id);
+            try
+            {
+                await _genreService.CreateAsync(dto);
+                return Ok("Genre created successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating genre: {ex.Message}");
+            }
         }
 
         // PUT api/<GenreController>/5
@@ -57,8 +54,18 @@ namespace Spotify_API.Controllers
 
         // DELETE api/<GenreController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                await _genreService.DeleteAsync(id);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
         }
     }
 }

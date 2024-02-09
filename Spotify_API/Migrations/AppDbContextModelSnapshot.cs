@@ -340,28 +340,44 @@ namespace Spotify_API.Migrations
 
             modelBuilder.Entity("Spotify_API.Entities.MusicGenre", b =>
                 {
-                    b.Property<int>("MusicId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
-                    b.HasKey("MusicId", "GenreId");
+                    b.Property<int>("MusicId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("GenreId");
+
+                    b.HasIndex("MusicId");
 
                     b.ToTable("MusicGenres");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.MusicPlayList", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("MusicId")
                         .HasColumnType("int");
 
                     b.Property<int>("PlayListId")
                         .HasColumnType("int");
 
-                    b.HasKey("MusicId", "PlayListId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("MusicId");
 
                     b.HasIndex("PlayListId");
 

@@ -1,8 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Spotify_API.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.Music;
-using Spotify_API.Entities;
+using Spotify_API.Services.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,14 +10,11 @@ namespace Spotify_API.Controllers
     [ApiController]
     public class MusicController : ControllerBase
     {
+        private readonly IMusicService _musicSercive;
 
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
-
-        public MusicController(AppDbContext appDbContext, IMapper mapper)
+        public MusicController(IMusicService musicService)
         {
-            _context = appDbContext;
-            _mapper = mapper;
+            _musicSercive = musicService;
         }
 
         // GET: api/<MusicController>
@@ -38,31 +33,18 @@ namespace Spotify_API.Controllers
 
         // POST api/<MusicController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] MusicPostDto dto)
+        public async Task<IActionResult> Post([FromForm] MusicPostDto dto)
         {
-            var music = _mapper.Map<Music>(dto);
-
-            // GenrePostDto listesini dönerek her bir türü ara
-            //foreach (var genreDto in dto.GenrePostDtos)
-            //{
-            //    var genre = await _context.Genres.FirstOrDefaultAsync(x => x.Name == genreDto.Name);
-            //    if (genre != null)
-            //    {
-            //        // Genre bulunduğunda Music nesnesine ekle
-            //        music.MusicGenres.Add(new MusicGenre { GenreId = genre.Id });
-            //    }
-            //    else
-            //    {
-            //        // Eşleşen bir tür bulunamazsa uygun bir hata mesajı döndür
-            //        return NotFound("No matching genre found for: " + genreDto.Name);
-            //    }
-            //}
-
-            _context.Musics.Add(music);
-            await _context.SaveChangesAsync();
-            return Ok(music.Id);
+            try
+            {
+                await _musicSercive.CreateAsync(dto);
+                return Ok("Music created successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating music: {ex.Message}");
+            }
         }
-
 
 
         // PUT api/<MusicController>/5

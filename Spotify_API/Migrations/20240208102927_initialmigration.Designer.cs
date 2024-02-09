@@ -12,8 +12,8 @@ using Spotify_API.Data;
 namespace Spotify_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240207191447_update")]
-    partial class update
+    [Migration("20240208102927_initialmigration")]
+    partial class initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -343,28 +343,44 @@ namespace Spotify_API.Migrations
 
             modelBuilder.Entity("Spotify_API.Entities.MusicGenre", b =>
                 {
-                    b.Property<int>("MusicId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
 
-                    b.HasKey("MusicId", "GenreId");
+                    b.Property<int>("MusicId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("GenreId");
+
+                    b.HasIndex("MusicId");
 
                     b.ToTable("MusicGenres");
                 });
 
             modelBuilder.Entity("Spotify_API.Entities.MusicPlayList", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("MusicId")
                         .HasColumnType("int");
 
                     b.Property<int>("PlayListId")
                         .HasColumnType("int");
 
-                    b.HasKey("MusicId", "PlayListId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("MusicId");
 
                     b.HasIndex("PlayListId");
 

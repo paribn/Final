@@ -1,8 +1,6 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Spotify_API.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.PlayList;
-using Spotify_API.Entities;
+using Spotify_API.Services.Abstract;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,13 +10,11 @@ namespace Spotify_API.Controllers
     [ApiController]
     public class PlayListController : ControllerBase
     {
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
+        private readonly IPlaylistService _playlistService;
 
-        public PlayListController(AppDbContext appDbContext, IMapper mapper)
+        public PlayListController(IPlaylistService playlistService)
         {
-            _context = appDbContext;
-            _mapper = mapper;
+            _playlistService = playlistService;
         }
 
 
@@ -38,17 +34,17 @@ namespace Spotify_API.Controllers
 
         // POST api/<PlayListController>
         [HttpPost]
-        public IActionResult Post([FromBody] PlayListPostDto dto)
+        public async Task<IActionResult> Post([FromForm] PlayListPostDto dto)
         {
-            if (!ModelState.IsValid) return BadRequest();
-
-            var playlist = new Playlist();
-
-            _mapper.Map(dto, playlist);
-            _context.Playlists.Add(playlist);
-            _context.SaveChanges();
-            return Ok(playlist.Id);
-
+            try
+            {
+                await _playlistService.CreateAsync(dto);
+                return Ok("Playlist created successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating: {ex.Message}");
+            }
         }
 
         // PUT api/<PlayListController>/5

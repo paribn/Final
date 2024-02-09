@@ -6,5 +6,6 @@
         public string Description { get; set; }
         public string AppUserId { get; set; }
 
+        public List<int>? MusicId { get; set; }
     }
 }
