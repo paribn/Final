@@ -28,12 +28,15 @@ namespace Spotify_API.Services.Concrete
             {
                 var music = _mapper.Map<Music>(musicPostDto);
                 var coverImageFile = musicPostDto.PhotoUrl;
+                var mp3 = musicPostDto.MusicUrl;
 
-                if (coverImageFile != null)
+                if (coverImageFile != null && mp3 != null)
                 {
                     var coverImageUrl = _fileService.UploadFile(coverImageFile);
+                    var musicUrl = _fileService.UploadMusic(mp3);
 
                     music.PhotoUrl = coverImageUrl;
+                    music.MusicUrl = musicUrl;
                 }
                 music.MusicGenres = new List<MusicGenre>();
 
@@ -54,5 +57,19 @@ namespace Spotify_API.Services.Concrete
             }
 
         }
+
+        public async Task<List<MusicGetDto>> GetAsync()
+        {
+            var musicGetDtos = await _context.Musics
+                .Include(x => x.Artist)
+                .Include(x => x.Album)
+                .Select(x => _mapper.Map(x, new MusicGetDto()))// Her müzik için MusicGetDto oluştur
+                .AsNoTracking()
+                .ToListAsync(); // Senkron bir şekilde koleksiyonu döndür
+
+            return musicGetDtos;
+        }
+
+
     }
 }

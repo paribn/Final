@@ -1,6 +1,46 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Andrea Vanzo Soulmate.mp33021fcce-4573-444a-ae6c-a8bd94203a6d.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Andrea Vanzo Soulmate.mp33021fcce-4573-444a-ae6c-a8bd94203a6d.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Andrea Vanzo Soulmate.mp377577e51-7230-4485-8032-ed5137ccb1c1.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Andrea Vanzo Soulmate.mp377577e51-7230-4485-8032-ed5137ccb1c1.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp30072bb6c-89fa-4c6f-83f7-4d8b09d55007.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp30072bb6c-89fa-4c6f-83f7-4d8b09d55007.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp33a6c1e9d-eed7-4dab-8875-1d9f23161495.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp33a6c1e9d-eed7-4dab-8875-1d9f23161495.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp3b4328f15-7cf6-4cb9-88a2-42b86ad5762a.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp3b4328f15-7cf6-4cb9-88a2-42b86ad5762a.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp3d344e792-c09f-45e3-9216-10aef16dbbb0.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp3d344e792-c09f-45e3-9216-10aef16dbbb0.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp3fd3dd4ab-ef12-4d4c-9572-9608a9099ccb.mp3",
+      "PackagePath": "staticwebassets\\mp3\\Daft Punk Instant Crush (Feat. Julian Casablancas) Ft Julian Casablancas.mp3fd3dd4ab-ef12-4d4c-9572-9608a9099ccb.mp3"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Bruno mars 1.jpg47b1a771-29fa-4aac-84d5-0617baebab2c.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Bruno mars 1.jpg47b1a771-29fa-4aac-84d5-0617baebab2c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Bruno mars 1.jpgb0ac6645-9274-45c3-8650-be228550c6a2.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Bruno mars 1.jpgb0ac6645-9274-45c3-8650-be228550c6a2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Bruno mars 1.jpgee836722-05fd-4b7d-8590-858b1dca5bc6.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Bruno mars 1.jpgee836722-05fd-4b7d-8590-858b1dca5bc6.jpg"
+    },
+    {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg1af7e928-223d-4f10-b5a8-36862abb97cf.jpeg",
       "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg1af7e928-223d-4f10-b5a8-36862abb97cf.jpeg"
     },
@@ -29,6 +69,10 @@
       "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg2485df13-4abb-4730-8e3e-8be18cb781b4.jpeg"
     },
     {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg283cd4ac-0c38-491c-9664-cb43877c92d2.jpeg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg283cd4ac-0c38-491c-9664-cb43877c92d2.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg32fc44c4-8991-441c-9ecd-98a724096f9d.jpeg",
       "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg32fc44c4-8991-441c-9ecd-98a724096f9d.jpeg"
     },
@@ -55,6 +99,10 @@
     {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg5a29c6b4-3de8-4f56-a6fe-299dfd515376.jpeg",
       "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg5a29c6b4-3de8-4f56-a6fe-299dfd515376.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg5a8687bb-210d-49b9-b806-20f7b736ba85.jpeg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpeg5a8687bb-210d-49b9-b806-20f7b736ba85.jpeg"
     },
     {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpeg5fd2d6d5-8fe2-48fd-b2bb-8901fd1de951.jpeg",
@@ -199,6 +247,50 @@
     {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Eminem withoutme.jpegffc31621-ae78-4181-bc55-17b0bfe3e5b9.jpeg",
       "PackagePath": "staticwebassets\\musicAlbomimg\\Eminem withoutme.jpegffc31621-ae78-4181-bc55-17b0bfe3e5b9.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Queen under Pressure.jpgfb182a34-2af9-48c1-990e-402535f217b2.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Queen under Pressure.jpgfb182a34-2af9-48c1-990e-402535f217b2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Soulmate.jpg6333d0f5-dcbb-4c92-b439-aac5b31c7c1d.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Soulmate.jpg6333d0f5-dcbb-4c92-b439-aac5b31c7c1d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\Soulmate.jpgcf2e72ea-9a09-4a9f-8ca8-645c31a8decf.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\Soulmate.jpgcf2e72ea-9a09-4a9f-8ca8-645c31a8decf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\The weeknd save your tears.jpg34c7e31b-6aca-41d6-a67e-cebfcd41ab86.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\The weeknd save your tears.jpg34c7e31b-6aca-41d6-a67e-cebfcd41ab86.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\bigphtLana.jpg9a2bf658-3d53-42b6-b0ae-c1288216feec.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\bigphtLana.jpg9a2bf658-3d53-42b6-b0ae-c1288216feec.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\instant crush.jpg54a24579-bf81-45fe-8f9a-fb7e70cb5228.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\instant crush.jpg54a24579-bf81-45fe-8f9a-fb7e70cb5228.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\instant crush.jpg860f7b21-6951-41fb-979c-8dad24a6d762.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\instant crush.jpg860f7b21-6951-41fb-979c-8dad24a6d762.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\instant crush.jpga785296b-8f44-4b1c-b6f6-53e30cca109c.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\instant crush.jpga785296b-8f44-4b1c-b6f6-53e30cca109c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\instant crush.jpgc7189ad5-3555-4572-848f-a0cc23ed94ae.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\instant crush.jpgc7189ad5-3555-4572-848f-a0cc23ed94ae.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\instant crush.jpge155b62e-065d-4ba8-933b-e54e4dead510.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\instant crush.jpge155b62e-065d-4ba8-933b-e54e4dead510.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\musicAlbomimg\\instant crush.jpge6efd4e7-89fd-4730-8576-c48c68cf8870.jpg",
+      "PackagePath": "staticwebassets\\musicAlbomimg\\instant crush.jpge6efd4e7-89fd-4730-8576-c48c68cf8870.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Spotify_API.Microsoft.AspNetCore.StaticWebAssets.props",

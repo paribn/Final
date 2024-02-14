@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public string Title { get; set; }
         public int Duration { get; set; }
-        public int ListenCount { get; set; }
+        //public int ListenCount { get; set; }
 
         public string MusicUrl { get; set; }
         public string PhotoUrl { get; set; }

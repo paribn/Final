@@ -314,9 +314,6 @@ namespace Spotify_API.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<int>("ListenCount")
-                        .HasColumnType("int");
-
                     b.Property<string>("MusicUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

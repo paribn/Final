@@ -19,17 +19,24 @@ namespace Spotify_API.Controllers
 
         // GET: api/<MusicController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(await _musicSercive.GetAsync());
+            }
+            catch (Exception)
+            {
+                return NotFound("No music found!");
+            }
         }
 
         // GET api/<MusicController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //public async Task <IActionResult> Get(int id)
+        //{
+        //    //return "value";
+        //}
 
         // POST api/<MusicController>
         [HttpPost]

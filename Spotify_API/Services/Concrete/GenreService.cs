@@ -34,5 +34,10 @@ namespace Spotify_API.Services.Concrete
             _context.Remove(genre);
             _context.SaveChanges();
         }
+
+        public Task UpdateAsync(int id, GenrePutDto genrePutDto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

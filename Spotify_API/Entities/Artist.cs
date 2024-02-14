@@ -7,7 +7,6 @@ namespace Spotify_API.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string About { get; set; }
-
         public ArtistTypes ArtistType { get; set; }
         public virtual ICollection<Album>? Albums { get; set; }
         public virtual ICollection<Music>? Musics { get; set; }

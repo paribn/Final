@@ -4,19 +4,14 @@
     {
         public string Title { get; set; }
         public int Duration { get; set; }
-        public int ListenCount { get; set; }
-
-        public string MusicUrl { get; set; }
-
-        public IFormFile PhotoUrl { get; set; }
-
+        //public int ListenCount { get; set; }
+        public IFormFile? MusicUrl { get; set; }
+        public IFormFile? PhotoUrl { get; set; }
 
         public int AlbumId { get; set; }
         public int ArtistId { get; set; }
 
-
         public List<int>? GenreId { get; set; }
-        //public List<GenrePostDto> GenrePostDtos { get; set; }
 
 
     }

@@ -2,7 +2,7 @@
 {
     public enum ArtistTypes
     {
-        SingleArtist,
+        Artist = 1,
         Band
     }
 }

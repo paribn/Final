@@ -7,5 +7,11 @@
         string UploadFile(IFormFile fromFile);
 
         public void DeleteFile(string fileName);
+        string UploadMusic(IFormFile fromFile);
+
+        public void DeleteMusic(string musicUrl);
+
+
+
     }
 }
