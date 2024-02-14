@@ -77,11 +77,9 @@ namespace Spotify_API.Services.Concrete
             if (music is null)
                 throw new ArgumentNullException(nameof(music), "Music not found");
 
-            // Dosyaları sil
             _fileService.DeleteMusic(music.MusicUrl);
             _fileService.DeleteFile(music.PhotoUrl);
 
-            // Veritabanından müzik öğesini sil
             _context.Remove(music);
             await _context.SaveChangesAsync();
 
@@ -92,13 +90,38 @@ namespace Spotify_API.Services.Concrete
             var musicGetDtos = await _context.Musics
                 .Include(x => x.Artist)
                 .Include(x => x.Album)
-                .Select(x => _mapper.Map(x, new MusicGetDto()))// Her müzik için MusicGetDto oluştur
+                .Select(x => _mapper.Map(x, new MusicGetDto()))
                 .AsNoTracking()
-                .ToListAsync(); // Senkron bir şekilde koleksiyonu döndür
+                .ToListAsync();
 
             return musicGetDtos;
         }
 
+        public async Task UpdateAsync(int id, MusicPutDto musicPutDto)
+        {
+            var music = await _context.Musics.FirstOrDefaultAsync(x => x.Id == id);
+            if (music == null)
+            {
+                throw new ArgumentNullException(nameof(music), "Music not found");
+            }
+            _mapper.Map(musicPutDto, music);
 
+            if (musicPutDto.PhotoUrl != null)
+            {
+                if (music.PhotoUrl != null)
+                {
+                    _fileService.DeleteFile(music.PhotoUrl);  /// silinmiir rootdan shekl 
+                }
+                music.PhotoUrl = _fileService.UploadFile(musicPutDto.PhotoUrl);
+            }
+
+
+
+            await _context.SaveChangesAsync();
+        }
     }
 }
+
+
+
+

@@ -56,8 +56,18 @@ namespace Spotify_API.Controllers
 
         // PUT api/<MusicController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromForm] MusicPutDto dto)
         {
+            try
+            {
+                await _musicSercive.UpdateAsync(id, dto);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { ErrorMessage = "Not Updated" });
+            }
         }
 
         // DELETE api/<MusicController>/5

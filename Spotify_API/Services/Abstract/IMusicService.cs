@@ -8,6 +8,9 @@ namespace Spotify_API.Services.Abstract
         Task<List<MusicGetDto>> GetAsync();
 
         Task DeleteAsync(int id);
+        Task UpdateAsync(int id, MusicPutDto musicPutDto);
+
+
 
     }
 }
