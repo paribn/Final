@@ -23,6 +23,19 @@ namespace Spotify_API.Services.Concrete
         public async Task CreateAsync(MusicPostDto musicPostDto)
         {
             var genre = await _context.Genres.FirstOrDefaultAsync(x => musicPostDto.GenreId.Contains(x.Id));
+            var artistExists = await _context.Artists.AnyAsync(a => a.Id == musicPostDto.ArtistId);
+
+            if (!artistExists)
+            {
+                throw new ArgumentException("Invalid artist ID.");
+            }
+
+            var genreExists = await _context.Albums.AnyAsync(g => g.Id == musicPostDto.AlbumId);
+
+            if (!genreExists)
+            {
+                throw new ArgumentException("Invalid album ID.");
+            }
 
             if (genre != null)
             {
@@ -53,7 +66,7 @@ namespace Spotify_API.Services.Concrete
             }
             else
             {
-                throw new Exception("You must select at least one genre.");
+                throw new Exception();
             }
 
         }
@@ -61,8 +74,14 @@ namespace Spotify_API.Services.Concrete
         public async Task DeleteAsync(int id)
         {
             var music = await _context.Musics.FirstOrDefaultAsync(x => x.Id == id);
-            if (music is null) throw new ArgumentNullException(nameof(music), "Music not found");
+            if (music is null)
+                throw new ArgumentNullException(nameof(music), "Music not found");
 
+            // Dosyaları sil
+            _fileService.DeleteMusic(music.MusicUrl);
+            _fileService.DeleteFile(music.PhotoUrl);
+
+            // Veritabanından müzik öğesini sil
             _context.Remove(music);
             await _context.SaveChangesAsync();
 

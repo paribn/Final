@@ -1,4 +1,6 @@
 
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -110,6 +112,9 @@ namespace Spotify_API
             });
             });
 
+            builder.Services.AddFluentValidationAutoValidation()
+           .AddFluentValidationClientsideAdapters()
+           .AddValidatorsFromAssemblyContaining(typeof(Program));
 
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

@@ -14,5 +14,9 @@
         public string AlbumName { get; set; }
 
         public string ArtistType { get; set; }
+
+
+
+
     }
 }
