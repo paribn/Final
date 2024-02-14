@@ -58,6 +58,16 @@ namespace Spotify_API.Services.Concrete
 
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            var music = await _context.Musics.FirstOrDefaultAsync(x => x.Id == id);
+            if (music is null) throw new ArgumentNullException(nameof(music), "Music not found");
+
+            _context.Remove(music);
+            await _context.SaveChangesAsync();
+
+        }
+
         public async Task<List<MusicGetDto>> GetAsync()
         {
             var musicGetDtos = await _context.Musics

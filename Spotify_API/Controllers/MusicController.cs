@@ -62,8 +62,18 @@ namespace Spotify_API.Controllers
 
         // DELETE api/<MusicController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                await _musicSercive.DeleteAsync(id);
+
+                return Ok("Deleted successfully ");
+            }
+            catch (Exception)
+            {
+                return NotFound("Music not found!");
+            }
         }
     }
 }
