@@ -71,19 +71,7 @@ namespace Spotify_API.Services.Concrete
 
         }
 
-        public async Task DeleteAsync(int id)
-        {
-            var music = await _context.Musics.FirstOrDefaultAsync(x => x.Id == id);
-            if (music is null)
-                throw new ArgumentNullException(nameof(music), "Music not found");
 
-            _fileService.DeleteMusic(music.MusicUrl);
-            _fileService.DeleteFile(music.PhotoUrl);
-
-            _context.Remove(music);
-            await _context.SaveChangesAsync();
-
-        }
 
         public async Task<List<MusicGetDto>> GetAsync()
         {
@@ -95,6 +83,19 @@ namespace Spotify_API.Services.Concrete
                 .ToListAsync();
 
             return musicGetDtos;
+        }
+
+        public async Task<MusicGetDetail> GetDetailAsync(int id)
+        {
+            var music = await _context.Musics
+             .Include(x => x.Artist)
+             .Include(x => x.Album)
+            .FirstOrDefaultAsync(x => x.Id == id);
+            if (music == null) return null;
+
+            var musicDetail = _mapper.Map<MusicGetDetail>(music);
+
+            return musicDetail;
         }
 
         public async Task UpdateAsync(int id, MusicPutDto musicPutDto)
@@ -118,6 +119,21 @@ namespace Spotify_API.Services.Concrete
 
 
             await _context.SaveChangesAsync();
+        }
+
+
+        public async Task DeleteAsync(int id)
+        {
+            var music = await _context.Musics.FirstOrDefaultAsync(x => x.Id == id);
+            if (music is null)
+                throw new ArgumentNullException(nameof(music), "Music not found");
+
+            _fileService.DeleteMusic(music.MusicUrl);
+            _fileService.DeleteFile(music.PhotoUrl);
+
+            _context.Remove(music);
+            await _context.SaveChangesAsync();
+
         }
     }
 }

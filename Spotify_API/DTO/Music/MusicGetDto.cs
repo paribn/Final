@@ -13,8 +13,5 @@
 
         public string ArtistType { get; set; }
 
-
-
-
     }
 }

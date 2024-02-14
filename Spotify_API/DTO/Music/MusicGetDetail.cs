@@ -11,8 +11,8 @@
 
         public string? Artistname { get; set; }
 
-        public string AlbumName { get; set; }
+        public string? AlbumName { get; set; }
 
-        public string ArtistType { get; set; }
+        public string? ArtistType { get; set; }
     }
 }
