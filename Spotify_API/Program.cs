@@ -169,6 +169,8 @@ namespace Spotify_API
             .SetIsOriginAllowed(origin => true)
             .AllowCredentials());
 
+            app.UseStaticFiles();
+
             app.Run();
         }
     }

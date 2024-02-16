@@ -73,16 +73,29 @@ namespace Spotify_API.Services.Concrete
 
 
 
-        public async Task<List<MusicGetDto>> GetAsync()
+        public async Task<List<MusicGetDto>>? GetAsync(int page = 1, int pageSize = 5)
         {
-            var musicGetDtos = await _context.Musics
+            var totalCount = _context.Musics.Count();
+
+            var totalPages = (int)Math.Ceiling((decimal)totalCount / pageSize);
+            var musicPerPage = await _context.Musics
                 .Include(x => x.Artist)
                 .Include(x => x.Album)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Select(x => _mapper.Map(x, new MusicGetDto()))
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync(); // disabled
 
-            return musicGetDtos;
+
+            //var musicGetDtos = await _context.Musics
+            //    .Include(x => x.Artist)
+            //    .Include(x => x.Album)
+            //    .Select(x => _mapper.Map(x, new MusicGetDto()))
+            //    .AsNoTracking()
+            //    .ToListAsync();
+
+            return musicPerPage;
         }
 
         public async Task<MusicGetDetail> GetDetailAsync(int id)
@@ -105,14 +118,17 @@ namespace Spotify_API.Services.Concrete
             {
                 throw new ArgumentNullException(nameof(music), "Music not found");
             }
+
             _mapper.Map(musicPutDto, music);
+
+
+            if (music.PhotoUrl != null)
+            {
+                _fileService.DeleteFile(music.PhotoUrl);  /// 
+            }
 
             if (musicPutDto.PhotoUrl != null)
             {
-                if (music.PhotoUrl != null)
-                {
-                    _fileService.DeleteFile(music.PhotoUrl);  /// silinmiir rootdan shekl 
-                }
                 music.PhotoUrl = _fileService.UploadFile(musicPutDto.PhotoUrl);
             }
 

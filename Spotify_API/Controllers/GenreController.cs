@@ -19,17 +19,32 @@ namespace Spotify_API.Controllers
 
         // GET: api/<GenreController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(await _genreService.GetAllAsync());
+            }
+            catch (Exception)
+            {
+                return NotFound("No genre found!");
+            }
         }
 
         // GET api/<GenreController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                return Ok(await _genreService.GetDetailAsync(id));
+            }
+            catch (Exception)
+            {
+                return NotFound($"Genre with id {id} not found");
+            }
         }
+
 
         // POST api/<GenreController>
         [HttpPost]
@@ -48,8 +63,18 @@ namespace Spotify_API.Controllers
 
         // PUT api/<GenreController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] GenrePutDto dto)
         {
+            try
+            {
+                await _genreService.UpdateAsync(id, dto);
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { ErrorMessage = "Not Updated" });
+            }
         }
 
         // DELETE api/<GenreController>/5
@@ -64,7 +89,7 @@ namespace Spotify_API.Controllers
             }
             catch (Exception)
             {
-                return NotFound();
+                return NotFound($"Genre with id {id} not found");
             }
         }
     }

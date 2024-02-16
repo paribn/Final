@@ -1,5 +1,21 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp307ad2f4f-3608-4655-9506-1b9492719208.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp307ad2f4f-3608-4655-9506-1b9492719208.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp307ad2f4f-3608-4655-9506-1b9492719208.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp336e07492-ddb1-4579-99ba-1e94ed6b2fa7.mp3))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
@@ -15,6 +31,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp336e07492-ddb1-4579-99ba-1e94ed6b2fa7.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3414bab21-03c3-4d98-8c4a-f2eaae1734ea.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp3414bab21-03c3-4d98-8c4a-f2eaae1734ea.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3414bab21-03c3-4d98-8c4a-f2eaae1734ea.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp34392ed8c-5cf9-4669-bf8b-412eac7715fc.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp34392ed8c-5cf9-4669-bf8b-412eac7715fc.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp34392ed8c-5cf9-4669-bf8b-412eac7715fc.mp3))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3475fca21-9d3c-44b9-8b5d-eeb00be84661.mp3))">
       <SourceType>Package</SourceType>
@@ -80,6 +128,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp386b6d5d0-7a55-4bb0-a370-27423d1c4906.mp3))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp39a57669f-8589-4a7f-9f30-b9fc23d5aef4.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp39a57669f-8589-4a7f-9f30-b9fc23d5aef4.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp39a57669f-8589-4a7f-9f30-b9fc23d5aef4.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3c3d66164-3004-4023-8ae3-2da2567157e6.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp3c3d66164-3004-4023-8ae3-2da2567157e6.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3c3d66164-3004-4023-8ae3-2da2567157e6.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3e8759d16-c3f1-49e0-b894-7c8bcc1aecc9.mp3))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
@@ -95,6 +175,134 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3e8759d16-c3f1-49e0-b894-7c8bcc1aecc9.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3e9af53c9-c768-4f2e-9895-dba0e780f1c0.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp3e9af53c9-c768-4f2e-9895-dba0e780f1c0.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3e9af53c9-c768-4f2e-9895-dba0e780f1c0.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3f5a48f90-ce4d-44b1-aeda-156087cfcf4d.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Cinnamon Girl.mp3f5a48f90-ce4d-44b1-aeda-156087cfcf4d.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Cinnamon Girl.mp3f5a48f90-ce4d-44b1-aeda-156087cfcf4d.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Florida Kilos.mp3dbe470d3-760e-48b7-97f8-5e5406f03a8b.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Lana Del Rey Florida Kilos.mp3dbe470d3-760e-48b7-97f8-5e5406f03a8b.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Lana Del Rey Florida Kilos.mp3dbe470d3-760e-48b7-97f8-5e5406f03a8b.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Metro Boomin Creepin' Ft The Weeknd .mp3b2546eac-670d-4e8e-9010-079aa2f03d0d.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Metro Boomin Creepin' Ft The Weeknd .mp3b2546eac-670d-4e8e-9010-079aa2f03d0d.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Metro Boomin Creepin' Ft The Weeknd .mp3b2546eac-670d-4e8e-9010-079aa2f03d0d.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen I Want To Break Free.mp3673ebfbb-908d-4383-80b7-f31d93ad7048.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Queen I Want To Break Free.mp3673ebfbb-908d-4383-80b7-f31d93ad7048.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen I Want To Break Free.mp3673ebfbb-908d-4383-80b7-f31d93ad7048.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen We Are The Champions.mp3163e25c8-4c9a-43ef-befe-bf4c69f8dc5e.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Queen We Are The Champions.mp3163e25c8-4c9a-43ef-befe-bf4c69f8dc5e.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen We Are The Champions.mp3163e25c8-4c9a-43ef-befe-bf4c69f8dc5e.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen We Are The Champions.mp35c202e25-a48a-4f33-8a93-20b19dee62cd.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Queen We Are The Champions.mp35c202e25-a48a-4f33-8a93-20b19dee62cd.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen We Are The Champions.mp35c202e25-a48a-4f33-8a93-20b19dee62cd.mp3))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen We Are The Champions.mp3d01ce6c3-0a47-4f56-90b9-eb9c2fa9ea4c.mp3))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>mp3/Queen We Are The Champions.mp3d01ce6c3-0a47-4f56-90b9-eb9c2fa9ea4c.mp3</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Queen We Are The Champions.mp3d01ce6c3-0a47-4f56-90b9-eb9c2fa9ea4c.mp3))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Without-Me---Eminem(musicdownload.cc).mp3ccd40890-1306-4db2-b062-65c14bb5ccdb.mp3))">
       <SourceType>Package</SourceType>
@@ -112,12 +320,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Without-Me---Eminem(musicdownload.cc).mp3ccd40890-1306-4db2-b062-65c14bb5ccdb.mp3))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\bigphtLana.jpgd3a99247-03d7-4581-9462-13a89c65c0ed.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno mars 1.jpg316856d6-3a67-478b-812c-e9e09ea0f31f.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Spotify_API</BasePath>
-      <RelativePath>musicAlbomimg/bigphtLana.jpgd3a99247-03d7-4581-9462-13a89c65c0ed.jpg</RelativePath>
+      <RelativePath>musicAlbomimg/Bruno mars 1.jpg316856d6-3a67-478b-812c-e9e09ea0f31f.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -126,14 +334,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\bigphtLana.jpgd3a99247-03d7-4581-9462-13a89c65c0ed.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno mars 1.jpg316856d6-3a67-478b-812c-e9e09ea0f31f.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno Mars.jpg66a7f57c-0221-41fb-84cb-7f7dc05f46a2.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno mars 1.jpgc6b96e82-69f9-4bf3-bbcf-02671c968954.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Spotify_API</BasePath>
-      <RelativePath>musicAlbomimg/Bruno Mars.jpg66a7f57c-0221-41fb-84cb-7f7dc05f46a2.jpg</RelativePath>
+      <RelativePath>musicAlbomimg/Bruno mars 1.jpgc6b96e82-69f9-4bf3-bbcf-02671c968954.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -142,14 +350,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno Mars.jpg66a7f57c-0221-41fb-84cb-7f7dc05f46a2.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno mars 1.jpgc6b96e82-69f9-4bf3-bbcf-02671c968954.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno Mars.jpg71d3080d-38eb-43d8-8f1f-31b3a73eca61.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Lazy song bruno.jpg73de3b81-d08c-49bf-93fa-888f4c22cd28.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Spotify_API</BasePath>
-      <RelativePath>musicAlbomimg/Bruno Mars.jpg71d3080d-38eb-43d8-8f1f-31b3a73eca61.jpg</RelativePath>
+      <RelativePath>musicAlbomimg/Lazy song bruno.jpg73de3b81-d08c-49bf-93fa-888f4c22cd28.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -158,14 +366,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Bruno Mars.jpg71d3080d-38eb-43d8-8f1f-31b3a73eca61.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Lazy song bruno.jpg73de3b81-d08c-49bf-93fa-888f4c22cd28.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg6f8f36c1-11ce-4c5a-a217-0e8882573190.jpeg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Queen under Pressure.jpge3f3a03d-5786-41d7-b474-20ab4366cefa.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Spotify_API</BasePath>
-      <RelativePath>musicAlbomimg/Eminem withoutme.jpeg6f8f36c1-11ce-4c5a-a217-0e8882573190.jpeg</RelativePath>
+      <RelativePath>musicAlbomimg/Queen under Pressure.jpge3f3a03d-5786-41d7-b474-20ab4366cefa.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -174,14 +382,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Eminem withoutme.jpeg6f8f36c1-11ce-4c5a-a217-0e8882573190.jpeg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Queen under Pressure.jpge3f3a03d-5786-41d7-b474-20ab4366cefa.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\MusicBorntodiebigphoto.jpge1e44918-7e4c-4616-b14f-f25ca06a1455.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Soulmate.jpgb608fc8a-bc89-40cb-941c-62d8307156a7.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Spotify_API</BasePath>
-      <RelativePath>musicAlbomimg/MusicBorntodiebigphoto.jpge1e44918-7e4c-4616-b14f-f25ca06a1455.jpg</RelativePath>
+      <RelativePath>musicAlbomimg/Soulmate.jpgb608fc8a-bc89-40cb-941c-62d8307156a7.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -190,7 +398,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\MusicBorntodiebigphoto.jpge1e44918-7e4c-4616-b14f-f25ca06a1455.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\musicAlbomimg\Soulmate.jpgb608fc8a-bc89-40cb-941c-62d8307156a7.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

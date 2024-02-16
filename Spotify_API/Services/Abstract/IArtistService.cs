@@ -6,5 +6,12 @@ namespace Spotify_API.Services.Abstract
     {
         Task CreateAsync(ArtistPostDto artistPostDto);
         Task UpdateAsync(int id, ArtistPutDto artistPutDto);
+
+        Task DeleteAsync(int id);
+
+
+        Task<List<ArtistGetDto>> GetAllAsync();
+
+        Task<ArtistGetDetail> GetDetailAsync(int id);
     }
 }
