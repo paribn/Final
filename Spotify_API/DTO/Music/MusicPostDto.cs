@@ -5,7 +5,7 @@ namespace Spotify_API.DTO.Music
     public class MusicPostDto
     {
         public string Title { get; set; }
-        public int Duration { get; set; }
+        //public int Duration { get; set; }
         public IFormFile? MusicUrl { get; set; }
         public IFormFile? PhotoUrl { get; set; }
 
@@ -22,8 +22,6 @@ namespace Spotify_API.DTO.Music
                   .Must(name => !string.IsNullOrWhiteSpace(name)).WithMessage("Name must not consist only of white spaces!")
                   .Length(1, 100).WithMessage("Can't be less than 1  more than 100  characters!");
 
-                RuleFor(x => x.Duration)
-                    .NotNull().WithMessage("Duration is required!");
 
                 RuleFor(music => music.MusicUrl)
                 .NotNull().WithMessage("Music is not empty.")

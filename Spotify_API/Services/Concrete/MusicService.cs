@@ -25,6 +25,18 @@ namespace Spotify_API.Services.Concrete
             var genre = await _context.Genres.FirstOrDefaultAsync(x => musicPostDto.GenreId.Contains(x.Id));
             var artistExists = await _context.Artists.AnyAsync(a => a.Id == musicPostDto.ArtistId);
 
+
+            //var existingDoctor = _context.Doctors
+            //      .AsEnumerable()
+            //      .FirstOrDefault(d => d.FullName.Trim().Equals(dto.FullName.Trim(), StringComparison.OrdinalIgnoreCase));
+
+
+            //if (existingDoctor != null)
+            //{
+            //    return Conflict("Doctor with the same FullName already exists.");
+            //}
+
+
             if (!artistExists)
             {
                 throw new ArgumentException("Invalid artist ID.");
@@ -73,29 +85,48 @@ namespace Spotify_API.Services.Concrete
 
 
 
-        public async Task<List<MusicGetDto>>? GetAsync(int page = 1, int pageSize = 5)
+        public async Task<List<MusicGetDto>>? GetAsync(int page)
         {
-            var totalCount = _context.Musics.Count();
 
-            var totalPages = (int)Math.Ceiling((decimal)totalCount / pageSize);
-            var musicPerPage = await _context.Musics
+            var pageResult = 3f;
+            var pageCount = Math.Ceiling(_context.Musics.Count() / pageResult);
+
+            var musicGetDtos = await _context.Musics
                 .Include(x => x.Artist)
                 .Include(x => x.Album)
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
+                .Skip((page - 1) * (int)pageResult)
+                .Take((int)pageResult)
                 .Select(x => _mapper.Map(x, new MusicGetDto()))
                 .AsNoTracking()
-                .ToListAsync(); // disabled
+                .ToListAsync();
+
+            var response = new MusicResponse
+            {
+                Musics = musicGetDtos,
+                CurrentPages = page,
+                Pages = (int)pageCount
+            };
+
+            return musicGetDtos;
 
 
-            //var musicGetDtos = await _context.Musics
+
+
+
+
+
+
+            //var totalCount = _context.Musics.Count();
+
+            //var totalPages = (int)Math.Ceiling((decimal)totalCount / pageSize);
+            //var musicPerPage = await _context.Musics
             //    .Include(x => x.Artist)
             //    .Include(x => x.Album)
+            //    .Skip((page - 1) * pageSize)
+            //    .Take(pageSize)
             //    .Select(x => _mapper.Map(x, new MusicGetDto()))
             //    .AsNoTracking()
-            //    .ToListAsync();
-
-            return musicPerPage;
+            //    .ToListAsync(); // disabled
         }
 
         public async Task<MusicGetDetail> GetDetailAsync(int id)
@@ -151,6 +182,8 @@ namespace Spotify_API.Services.Concrete
             await _context.SaveChangesAsync();
 
         }
+
+
     }
 }
 

@@ -19,11 +19,12 @@ namespace Spotify_API.Controllers
 
         // GET: api/<MusicController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(int page)
         {
             try
             {
-                return Ok(await _musicSercive.GetAsync());
+                var musicList = await _musicSercive.GetAsync(page);
+                return Ok(musicList);
             }
             catch (Exception)
             {
@@ -33,7 +34,7 @@ namespace Spotify_API.Controllers
 
         // GET api/<MusicController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetDetail(int id)
         {
             try
             {

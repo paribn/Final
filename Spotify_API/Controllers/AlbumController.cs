@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Spotify_API.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.Album;
 using Spotify_API.Services.Abstract;
 
@@ -15,27 +13,37 @@ namespace Spotify_API.Controllers
     {
 
 
-        private readonly AppDbContext _context;
-        private readonly IMapper _mapper;
         private readonly IAlbumService _albumService;
-        public AlbumController(IAlbumService albumService, AppDbContext appDbContext, IMapper mapper)
+        public AlbumController(IAlbumService albumService)
         {
             _albumService = albumService;
-            _context = appDbContext;
-            _mapper = mapper;
         }
         // GET: api/<AlbumController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(await _albumService.GetAllAsync());
+            }
+            catch (Exception)
+            {
+                return NotFound("No album found!");
+            }
         }
 
         // GET api/<AlbumController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                return Ok(await _albumService.GetDetailAsync(id));
+            }
+            catch (Exception)
+            {
+                return NotFound("No album found!");
+            }
         }
 
 
@@ -55,22 +63,36 @@ namespace Spotify_API.Controllers
 
         }
 
-        // PUT api/<AlbumController>/5
+        //// PUT api/<AlbumController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] AlbumPutDto dto)
+        public async Task<IActionResult> Put(int id, [FromForm] AlbumPutDto dto)
         {
-            var option = _context.Albums.FirstOrDefault(x => x.Id == id);
-            if (option is null) return NotFound("was not found");
-            _mapper.Map(dto, option);
+            try
+            {
+                await _albumService.UpdateAsync(id, dto);
 
-            _context.SaveChanges();
-            return Ok(option.Id);
+                return Ok("Successfully updated");
+            }
+            catch (Exception)
+            {
+                return NotFound($"Album with id {id} not found");
+            }
         }
 
         // DELETE api/<AlbumController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                await _albumService.DeleteAsync(id);
+
+                return Ok("Successfully deleted");
+            }
+            catch (Exception)
+            {
+                return NotFound($"Album with id {id} not found");
+            }
         }
     }
 }

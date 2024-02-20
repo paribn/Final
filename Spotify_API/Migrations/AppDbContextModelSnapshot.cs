@@ -280,6 +280,28 @@ namespace Spotify_API.Migrations
                     b.ToTable("Artists");
                 });
 
+            modelBuilder.Entity("Spotify_API.Entities.ArtistPhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PhotoPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArtistId");
+
+                    b.ToTable("ArtistPhotos");
+                });
+
             modelBuilder.Entity("Spotify_API.Entities.Genre", b =>
                 {
                     b.Property<int>("Id")
@@ -289,6 +311,10 @@ namespace Spotify_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoPath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -311,18 +337,15 @@ namespace Spotify_API.Migrations
                     b.Property<int?>("ArtistId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
-
                     b.Property<string>("MusicUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhotoUrl")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("PhotoUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -393,10 +416,6 @@ namespace Spotify_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -463,6 +482,17 @@ namespace Spotify_API.Migrations
                 {
                     b.HasOne("Spotify_API.Entities.Artist", "Artist")
                         .WithMany("Albums")
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+                });
+
+            modelBuilder.Entity("Spotify_API.Entities.ArtistPhoto", b =>
+                {
+                    b.HasOne("Spotify_API.Entities.Artist", "Artist")
+                        .WithMany("ArtistPhoto")
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -547,6 +577,8 @@ namespace Spotify_API.Migrations
             modelBuilder.Entity("Spotify_API.Entities.Artist", b =>
                 {
                     b.Navigation("Albums");
+
+                    b.Navigation("ArtistPhoto");
 
                     b.Navigation("Musics");
                 });

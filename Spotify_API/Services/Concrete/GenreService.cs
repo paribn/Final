@@ -31,7 +31,7 @@ namespace Spotify_API.Services.Concrete
         public async Task DeleteAsync(int id)
         {
             var genre = _context.Genres.FirstOrDefault(x => x.Id == id);
-
+            if (genre is null) throw new Exception("Something went wrong!");
             _context.Remove(genre);
             _context.SaveChanges();
         }
@@ -67,7 +67,7 @@ namespace Spotify_API.Services.Concrete
 
             _mapper.Map(genrePutDto, genre);
 
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
         }
 

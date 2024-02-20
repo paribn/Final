@@ -20,16 +20,30 @@ namespace Spotify_API.Controllers
 
         // GET: api/<ArtistController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(await _artist.GetAllAsync());
+            }
+            catch (Exception)
+            {
+                return NotFound("No artist found!");
+            }
         }
 
         // GET api/<ArtistController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                return Ok(await _artist.GetDetailAsync(id));
+            }
+            catch (Exception)
+            {
+                return NotFound("No artist found!");
+            }
         }
 
         // POST api/<ArtistController>
@@ -54,18 +68,43 @@ namespace Spotify_API.Controllers
             try
             {
                 await _artist.UpdateAsync(id, dto);
-                return Ok("change"); // Başarılı işlem durumunda 200 OK yanıtı
+                return Ok("change");
             }
             catch (Exception ex)
             {
-                return NotFound(ex.Message); // Sanatçı bulunamadığı durumda 404 Not Found yanıtı
+                return NotFound(ex.Message);
             }
         }
 
         // DELETE api/<ArtistController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                await _artist.DeleteAsync(id);
+                return Ok("done");
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+
+
+        [HttpPost("CreateArtistPhoto/{artistId}")]
+        public async Task<IActionResult> AddPhoto(int artistId, [FromForm] ArtistPhotoCreateDto dto)
+        {
+            try
+            {
+                await _artist.AddPhoto(artistId, dto);
+                return Ok("Artist created successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating artist: {ex.Message}");
+            }
         }
     }
 }

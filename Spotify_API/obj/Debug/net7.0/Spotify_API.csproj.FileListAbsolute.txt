@@ -1,3 +1,10 @@
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.csproj.AssemblyReference.cache
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.AssemblyInfoInputs.cache
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.AssemblyInfo.cs
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.csproj.CoreCompileInputs.cache
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\appsettings.json
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\Spotify_API.staticwebassets.runtime.json
@@ -75,13 +82,6 @@ C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\n
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.csproj.AssemblyReference.cache
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.AssemblyInfoInputs.cache
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.AssemblyInfo.cs
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.csproj.CoreCompileInputs.cache
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\Spotify_API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\staticwebassets\msbuild.Spotify_API.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\staticwebassets\msbuild.build.Spotify_API.props
 C:\Users\Rovsen Novruzov\Desktop\Backpractic\Spotify_API\Spotify_API\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Spotify_API.props

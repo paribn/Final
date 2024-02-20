@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
     <Folder Include="wwwroot\mp3\" />
-    <Folder Include="wwwroot\musicAlbomimg\" />
   </ItemGroup>
 
 </Project>

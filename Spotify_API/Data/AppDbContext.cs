@@ -15,6 +15,7 @@ namespace Spotify_API.Data
         public DbSet<Genre> Genres { get; set; }
         public DbSet<MusicGenre> MusicGenres { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<ArtistPhoto> ArtistPhotos { get; set; }
         public DbSet<MusicPlayList> MusicPlayLists { get; set; }
         public DbSet<Album> Albums { get; set; }
 

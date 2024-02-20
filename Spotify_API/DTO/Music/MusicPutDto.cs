@@ -5,7 +5,6 @@ namespace Spotify_API.DTO.Music
     public class MusicPutDto
     {
         public string Title { get; set; }
-        public int Duration { get; set; }
         public IFormFile? PhotoUrl { get; set; }
 
         public class MusicDtoValidator : AbstractValidator<MusicPutDto>
@@ -20,8 +19,7 @@ namespace Spotify_API.DTO.Music
                 .MinimumLength(1).WithMessage("Your length must be at least 1.")
                 .MaximumLength(255).WithMessage("Your  length must not exceed 255.");
 
-                RuleFor(x => x.Duration)
-                .NotNull().WithMessage("Duration is required!");
+
 
                 RuleFor(music => music.PhotoUrl)
                    .NotNull().WithMessage("The photo file cannot be empty.")
