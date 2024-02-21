@@ -1,4 +1,5 @@
-﻿using Spotify_API.Helpers.Enums;
+﻿using FluentValidation;
+using Spotify_API.Helpers.Enums;
 
 namespace Spotify_API.DTO.Artist
 {
@@ -9,13 +10,24 @@ namespace Spotify_API.DTO.Artist
 
         public ArtistTypes ArtistTypes { get; set; }
 
-        //public List<int> GenreId { get; set; }
+        public class ArtistPostDtoValidator : AbstractValidator<ArtistPostDto>
+        {
+            public ArtistPostDtoValidator()
+            {
+                RuleFor(x => x.Name)
+                  .NotNull().WithMessage(" Name is required!")
+                  .Must(name => !string.IsNullOrWhiteSpace(name)).WithMessage("Name must not consist only of white spaces!")
+                  .Length(1, 100).WithMessage("Can't be less than 1  more than 100  characters!");
 
-        //public List<AlbumPostDto>? AlbumPostDtos { get; set; }
-        //public List<GenrePostDto>? GenrePostDtos { get; set; }
+                RuleFor(x => x.About)
+               .NotNull().WithMessage(" About is required!")
+               .Must(name => !string.IsNullOrWhiteSpace(name)).WithMessage("About must not consist only of white spaces!")
+               .Length(1, 255).WithMessage("Can't be less than 1  more than 255  characters!");
 
-        //public List<MusicPostDto> MusicPostDtos { get; set; }
+                RuleFor(x => x.ArtistTypes).NotNull();
 
+            }
 
+        }
     }
 }

@@ -3,7 +3,7 @@
     public class MusicGetDto
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string Name { get; set; }
         //public int Duration { get; set; }
 
         public string MusicUrl { get; set; }
@@ -11,7 +11,6 @@
 
         public string? Artistname { get; set; }
 
-        public string ArtistType { get; set; }
 
     }
 }

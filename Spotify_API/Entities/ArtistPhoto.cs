@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public string PhotoPath { get; set; }
 
+        public bool IsMain { get; set; }
         public int ArtistId { get; set; }
         public Artist Artist { get; set; }
     }

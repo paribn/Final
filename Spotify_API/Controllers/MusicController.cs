@@ -48,6 +48,7 @@ namespace Spotify_API.Controllers
 
         // POST api/<MusicController>
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> Post([FromForm] MusicPostDto dto)
         {
             try
@@ -57,9 +58,12 @@ namespace Spotify_API.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error creating music: {ex.Message}");
+                // Inner Exception'ı kontrol etmek için içindeki InnerException'a bakıyoruz.
+                var innerExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : "";
+                return BadRequest($"Error creating music: {ex.Message}. Inner Exception: {innerExceptionMessage}");
             }
         }
+
 
 
         // PUT api/<MusicController>/5

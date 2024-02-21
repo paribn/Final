@@ -1,0 +1,24 @@
+﻿using FluentValidation;
+
+namespace Spotify_API.DTO.PlayList
+{
+    public class PlaylistPutDto
+    {
+        public string Title { get; set; }
+
+
+
+        public class PlaylistPostDtoValidator : AbstractValidator<PlaylistPutDto>
+        {
+            public PlaylistPostDtoValidator()
+            {
+                RuleFor(x => x.Title)
+                  .NotNull().WithMessage(" Title is required!")
+                  .Must(name => !string.IsNullOrWhiteSpace(name)).WithMessage("Name must not consist only of white spaces!")
+                  .Length(1, 100).WithMessage("Can't be less than 1  more than 100  characters!");
+
+            }
+
+        }
+    }
+}

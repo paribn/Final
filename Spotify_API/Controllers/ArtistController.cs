@@ -83,7 +83,7 @@ namespace Spotify_API.Controllers
             try
             {
                 await _artist.DeleteAsync(id);
-                return Ok("done");
+                return Ok("Deleted");
             }
             catch (Exception ex)
             {
@@ -93,12 +93,27 @@ namespace Spotify_API.Controllers
 
 
 
-        [HttpPost("CreateArtistPhoto/{artistId}")]
-        public async Task<IActionResult> AddPhoto(int artistId, [FromForm] ArtistPhotoCreateDto dto)
+        [HttpPost("CreateArtistPhoto")]
+        public async Task<IActionResult> AddPhoto([FromForm] ArtistPhotoCreateDto dto)
         {
             try
             {
-                await _artist.AddPhoto(artistId, dto);
+                await _artist.AddPhoto(dto);
+                return Ok("Artist created successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating artist: {ex.Message}");
+            }
+        }
+
+
+        [HttpPut("UpdateArtistPhoto")]
+        public async Task<IActionResult> UpdatePhoto(int id, [FromForm] ArtistPhotoUpdateDto photoDto)
+        {
+            try
+            {
+                await _artist.UpdatePhoto(id, photoDto);
                 return Ok("Artist created successfully");
             }
             catch (Exception ex)

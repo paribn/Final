@@ -15,9 +15,13 @@ namespace Spotify_API.Services.Abstract
         Task<ArtistGetDetail> GetDetailAsync(int id);
 
 
-        /// artist phhoto 
-        /// 
 
-        Task AddPhoto(int artistId, ArtistPhotoCreateDto photoDto);
+
+        /// artist phhoto add & update
+
+        Task AddPhoto(ArtistPhotoCreateDto photoDto);
+
+        Task UpdatePhoto(int id, ArtistPhotoUpdateDto photoDto);
+
     }
 }

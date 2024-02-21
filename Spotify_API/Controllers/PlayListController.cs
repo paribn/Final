@@ -20,16 +20,32 @@ namespace Spotify_API.Controllers
 
         // GET: api/<PlayListController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                var playlist = await _playlistService.GetAsync();
+                return Ok(playlist);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating: {ex.Message}");
+            }
         }
 
         // GET api/<PlayListController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                return Ok(await _playlistService.GetDetailAsync(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating: {ex.Message}");
+            }
+
         }
 
         // POST api/<PlayListController>
@@ -49,14 +65,33 @@ namespace Spotify_API.Controllers
 
         // PUT api/<PlayListController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] PlaylistPutDto putDto)
         {
+            try
+            {
+                await _playlistService.UpdateAsync(id, putDto);
+                return Ok("Playlist updated successfully");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating: {ex.Message}");
+            }
         }
 
         // DELETE api/<PlayListController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                await _playlistService.DeleteAsync(id);
+                return Ok("Deleted");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating: {ex.Message}");
+            }
+
         }
     }
 }

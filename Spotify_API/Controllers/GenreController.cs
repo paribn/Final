@@ -19,11 +19,11 @@ namespace Spotify_API.Controllers
 
         // GET: api/<GenreController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll(int? page = null, int? perPage = null)
         {
             try
             {
-                return Ok(await _genreService.GetAllAsync());
+                return Ok(await _genreService.GetAllAsync(page, perPage));
             }
             catch (Exception)
             {
@@ -48,7 +48,7 @@ namespace Spotify_API.Controllers
 
         // POST api/<GenreController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] GenrePostDto dto)
+        public async Task<IActionResult> Post([FromForm] GenrePostDto dto)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Spotify_API.Controllers
 
         // PUT api/<GenreController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] GenrePutDto dto)
+        public async Task<IActionResult> Put(int id, [FromForm] GenrePutDto dto)
         {
             try
             {

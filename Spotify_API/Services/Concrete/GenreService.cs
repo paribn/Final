@@ -12,40 +12,53 @@ namespace Spotify_API.Services.Concrete
 
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
-
-        public GenreService(AppDbContext appDbContext, IMapper mapper)
+        private readonly IFileService _fileService;
+        public GenreService(AppDbContext appDbContext, IMapper mapper, IFileService fileService)
         {
             _context = appDbContext;
             _mapper = mapper;
+            _fileService = fileService;
         }
 
         public async Task CreateAsync(GenrePostDto genrePostDto)
         {
+
             var genre = new Genre();
             _mapper.Map(genrePostDto, genre);
 
+            var image = genrePostDto.PhotoPath;
+            if (image != null)
+            {
+                var imageUrl = _fileService.UploadFile(image);
+                genre.PhotoPath = imageUrl;
+            }
             _context.Genres.Add(genre);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+
         }
 
-        public async Task DeleteAsync(int id)
+
+        public async Task<List<GenreGetDto>> GetAllAsync(int? page = null, int? perPage = null)
         {
-            var genre = _context.Genres.FirstOrDefault(x => x.Id == id);
-            if (genre is null) throw new Exception("Something went wrong!");
-            _context.Remove(genre);
-            _context.SaveChanges();
-        }
+            IQueryable<Genre> query = _context.Genres;
 
-        public async Task<List<GenreGetDto>> GetAllAsync()
-        {
+            if (page.HasValue && perPage.HasValue)
+            {
+                int totalCount = await query.CountAsync();
+                int totalPages = (int)Math.Ceiling((double)totalCount / perPage.Value);
+                page = Math.Min(Math.Max(page.Value, 1), totalPages); // Page number validation
 
-            var genres = await _context.Genres
-              .ToListAsync();
+                int skip = (page.Value - 1) * perPage.Value;
 
+                query = query.Skip(skip).Take(perPage.Value);
+            }
+
+            var genres = await query.ToListAsync();
             var genreDtos = _mapper.Map<List<GenreGetDto>>(genres);
 
             return genreDtos;
         }
+
 
         public async Task<GenreGetDetail> GetDetailAsync(int id)
         {
@@ -65,11 +78,27 @@ namespace Spotify_API.Services.Concrete
             var genre = await _context.Genres.FirstOrDefaultAsync(x => x.Id == id);
             if (genre is null) throw new ArgumentNullException(nameof(genre), "Genre not found");
 
-            _mapper.Map(genrePutDto, genre);
-
+            genre.Name = genrePutDto.Name;
+            if (genrePutDto.photoPath != null)
+            {
+                string newPhoto = _fileService.UploadFile(genrePutDto.photoPath);
+                if (!string.IsNullOrEmpty(genre.PhotoPath))
+                {
+                    _fileService.DeleteFile(genre.PhotoPath);
+                }
+                genre.PhotoPath = newPhoto;
+            }
             await _context.SaveChangesAsync();
-
         }
+
+        public async Task DeleteAsync(int id)
+        {
+            var genre = _context.Genres.FirstOrDefault(x => x.Id == id);
+            if (genre is null) throw new Exception("Something went wrong!");
+            _context.Remove(genre);
+            _context.SaveChanges();
+        }
+
 
 
     }

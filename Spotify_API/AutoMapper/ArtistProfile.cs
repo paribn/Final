@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Spotify_API.DTO.Album;
 using Spotify_API.DTO.Artist;
+using Spotify_API.DTO.Music;
 using Spotify_API.Entities;
 
 namespace Spotify_API.AutoMapper
@@ -8,7 +10,6 @@ namespace Spotify_API.AutoMapper
     {
         public ArtistProfile()
         {
-            //CreateMap<ArtistPostDto, Artist>().ReverseMap();
 
             // create artist post
             CreateMap<ArtistPostDto, Artist>()
@@ -25,29 +26,35 @@ namespace Spotify_API.AutoMapper
                 })));
 
 
-
-
-            //.ForMember(dest => dest.musicAlbumGetDtos, opt => opt.MapFrom(src => src.Musics.Select(m => new MusicAlbumGetDto
-            // {
-            //     Id = m.Id,
-            //     MusicName = m.Name,
-            //     MusicUrl = m.MusicUrl,
-            //     MusicPhotoUrl = m.PhotoUrl
-            // })));
-
             CreateMap<Artist, ArtistGetDetail>()
-           .ForMember(dest => dest.Albums, opt => opt.MapFrom(src => src.Albums));
+                .ForMember(dest => dest.artistPhotos, opt => opt.MapFrom(src => src.ArtistPhoto.Select(x => new ArtistPhotoGetDto
+                {
+                    Id = x.Id,
+                    PhotoPath = x.PhotoPath
+                })))
+                .ForMember(dest => dest.albumGets, opt => opt.MapFrom(src => src.Albums.Select(x => new AlbumGetDtoForArtist
+                {
+                    Id = x.Id,
+                    CoverImage = x.CoverImage,
+                    Title = x.Title,
+
+                })))
+                .ForMember(dest => dest.MusicGet, opt => opt.MapFrom(src => src.Musics.Select(x => new MusicAlbumGetDto
+                {
+                    Id = x.Id,
+                    MusicName = x.Name,
+                    MusicPhotoUrl = x.PhotoUrl,
+                    MusicUrl = x.MusicUrl,
+                })));
 
 
-
-            //CreateMap<Artist, ArtistPhotoCreateDto>()
-            //    .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.ArtistPhoto)).ReverseMap();
-
-            //CreateMap<ArtistPhotoCreateDto, Artist>()
-            //         .ForMember(dest => dest.ArtistPhoto, opt => opt.MapFrom(src => src.PhotoPath)).ReverseMap();
+            // artist photo add
             CreateMap<ArtistPhotoCreateDto, ArtistPhoto>()
-                .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath));
+            .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath))
+            .ReverseMap();
 
+            CreateMap<ArtistPhotoUpdateDto, ArtistPhoto>()
+                .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath)).ReverseMap();
 
         }
 

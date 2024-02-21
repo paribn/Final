@@ -4,21 +4,17 @@ namespace Spotify_API.DTO.Music
 {
     public class MusicPutDto
     {
-        public string Title { get; set; }
+        public string Name { get; set; }
         public IFormFile? PhotoUrl { get; set; }
 
         public class MusicDtoValidator : AbstractValidator<MusicPutDto>
         {
             public MusicDtoValidator()
             {
-                //RuleFor(x => x.Id)
-                //   .NotEmpty().WithMessage("Something went wrong")
-                //   .NotNull().WithMessage("Required!");
 
-                RuleFor(x => x.Title)
+                RuleFor(x => x.Name)
                 .MinimumLength(1).WithMessage("Your length must be at least 1.")
                 .MaximumLength(255).WithMessage("Your  length must not exceed 255.");
-
 
 
                 RuleFor(music => music.PhotoUrl)

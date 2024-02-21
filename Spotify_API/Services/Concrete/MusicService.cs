@@ -22,65 +22,42 @@ namespace Spotify_API.Services.Concrete
 
         public async Task CreateAsync(MusicPostDto musicPostDto)
         {
-            var genre = await _context.Genres.FirstOrDefaultAsync(x => musicPostDto.GenreId.Contains(x.Id));
             var artistExists = await _context.Artists.AnyAsync(a => a.Id == musicPostDto.ArtistId);
-
-
-            //var existingDoctor = _context.Doctors
-            //      .AsEnumerable()
-            //      .FirstOrDefault(d => d.FullName.Trim().Equals(dto.FullName.Trim(), StringComparison.OrdinalIgnoreCase));
-
-
-            //if (existingDoctor != null)
-            //{
-            //    return Conflict("Doctor with the same FullName already exists.");
-            //}
-
-
             if (!artistExists)
             {
-                throw new ArgumentException("Invalid artist ID.");
+                throw new ArgumentException("Geçersiz sanatçı ID'si.");
             }
 
-            var genreExists = await _context.Albums.AnyAsync(g => g.Id == musicPostDto.AlbumId);
-
-            if (!genreExists)
+            var albumExists = await _context.Albums.AnyAsync(a => a.Id == musicPostDto.AlbumId);
+            if (!albumExists)
             {
-                throw new ArgumentException("Invalid album ID.");
+                throw new ArgumentException("Geçersiz albüm ID'si.");
             }
 
-            if (genre != null)
+            var genres = await _context.Genres.Where(g => musicPostDto.GenreId.Contains(g.Id)).ToListAsync();
+            if (genres == null || !genres.Any())
             {
-                var music = _mapper.Map<Music>(musicPostDto);
-                var coverImageFile = musicPostDto.PhotoUrl;
-                var mp3 = musicPostDto.MusicUrl;
-
-                if (coverImageFile != null && mp3 != null)
-                {
-                    var coverImageUrl = _fileService.UploadFile(coverImageFile);
-                    var musicUrl = _fileService.UploadMusic(mp3);
-
-                    music.PhotoUrl = coverImageUrl;
-                    music.MusicUrl = musicUrl;
-                }
-                music.MusicGenres = new List<MusicGenre>();
-
-                var musicgenre = new MusicGenre
-                {
-                    MusicId = music.Id,
-                    GenreId = genre.Id,
-                };
-
-                music.MusicGenres.Add(musicgenre);
-
-                _context.Musics.Add(music);
-                await _context.SaveChangesAsync();
+                throw new ArgumentException("Geçersiz tür ID'si.");
             }
-            else
+
+            var music = _mapper.Map<Music>(musicPostDto);
+            //music.Name = musicPostDto.Title;
+            music.MusicGenres = genres.Select(genre => new MusicGenre { GenreId = genre.Id }).ToList();
+
+            var coverImageFile = musicPostDto.PhotoUrl;
+            var mp3 = musicPostDto.MusicUrl;
+
+            if (coverImageFile != null && mp3 != null)
             {
-                throw new Exception();
+                var coverImageUrl = _fileService.UploadFile(coverImageFile);
+                var musicUrl = _fileService.UploadMusic(mp3);
+
+                music.PhotoUrl = coverImageUrl;
+                music.MusicUrl = musicUrl;
             }
 
+            _context.Musics.Add(music);
+            await _context.SaveChangesAsync();
         }
 
 
@@ -94,9 +71,9 @@ namespace Spotify_API.Services.Concrete
             var musicGetDtos = await _context.Musics
                 .Include(x => x.Artist)
                 .Include(x => x.Album)
+                .Select(x => _mapper.Map(x, new MusicGetDto()))
                 .Skip((page - 1) * (int)pageResult)
                 .Take((int)pageResult)
-                .Select(x => _mapper.Map(x, new MusicGetDto()))
                 .AsNoTracking()
                 .ToListAsync();
 
@@ -108,8 +85,6 @@ namespace Spotify_API.Services.Concrete
             };
 
             return musicGetDtos;
-
-
 
 
 
