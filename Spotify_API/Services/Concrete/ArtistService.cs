@@ -47,27 +47,41 @@ namespace Spotify_API.Services.Concrete
 
         public async Task DeleteAsync(int id)
         {
-            var albums = _context.Artists.FirstOrDefault(x => x.Id == id);
-            if (albums is null)
-                throw new ArgumentNullException(nameof(albums), "Music not found");
+            var artist = _context.Artists.FirstOrDefault(x => x.Id == id);
+            if (artist is null)
+                throw new ArgumentNullException(nameof(artist), "Artist not found");
 
-            _context.Remove(albums);
+            _context.Remove(artist);
             await _context.SaveChangesAsync();
         }
 
 
-        public async Task<List<ArtistGetDto>> GetAllAsync()
+        public async Task<List<ArtistGetDto>> GetAllAsync(int? page = null, int? perPage = null, string artistName = null)
         {
-            var artist = await _context.Artists
-             .Include(x => x.ArtistPhoto)
-             .ToListAsync();
+            IQueryable<Artist> query = _context.Artists.Include(x => x.ArtistPhoto);
 
-            if (artist is null) throw new Exception("Something went wrong!");
+            if (!string.IsNullOrEmpty(artistName))
+            {
+                query = query.Where(a => a.Name.Contains(artistName));
+            }
 
-            var artistDtos = _mapper.Map<List<ArtistGetDto>>(artist);
+            if (page.HasValue && perPage.HasValue)
+            {
+                int totalCount = await query.CountAsync();
+                int totalPages = (int)Math.Ceiling((double)totalCount / perPage.Value);
+                page = Math.Min(Math.Max(page.Value, 1), totalPages); // Page number validation
+
+                int skip = (page.Value - 1) * perPage.Value;
+
+                query = query.Skip(skip).Take(perPage.Value);
+            }
+
+            var artists = await query.ToListAsync();
+            var artistDtos = _mapper.Map<List<ArtistGetDto>>(artists);
 
             return artistDtos;
         }
+
 
         public async Task<ArtistGetDetail> GetDetailAsync(int id)
         {

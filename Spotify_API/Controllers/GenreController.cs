@@ -19,11 +19,11 @@ namespace Spotify_API.Controllers
 
         // GET: api/<GenreController>
         [HttpGet]
-        public async Task<IActionResult> GetAll(int? page = null, int? perPage = null)
+        public async Task<IActionResult> GetAll(int? page = null, int? perPage = null, string genreName = null)
         {
             try
             {
-                return Ok(await _genreService.GetAllAsync(page, perPage));
+                return Ok(await _genreService.GetAllAsync(page, perPage, genreName));
             }
             catch (Exception)
             {

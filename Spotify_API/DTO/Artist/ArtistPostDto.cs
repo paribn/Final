@@ -22,7 +22,7 @@ namespace Spotify_API.DTO.Artist
                 RuleFor(x => x.About)
                .NotNull().WithMessage(" About is required!")
                .Must(name => !string.IsNullOrWhiteSpace(name)).WithMessage("About must not consist only of white spaces!")
-               .Length(1, 255).WithMessage("Can't be less than 1  more than 255  characters!");
+               .Length(1, 1000).WithMessage("Can't be less than 1  more than 1000  characters!");
 
                 RuleFor(x => x.ArtistTypes).NotNull();
 

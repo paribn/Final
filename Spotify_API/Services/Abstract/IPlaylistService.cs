@@ -4,7 +4,7 @@ namespace Spotify_API.Services.Abstract
 {
     public interface IPlaylistService
     {
-        Task<List<PlaylistGetDto>> GetAsync();
+        Task<List<PlaylistGetDto>> GetAsync(int? page = null, int? perPage = null, string playListName = null);
         Task<PlaylistDetailDto> GetDetailAsync(int id);
 
         Task CreateAsync(PlayListPostDto playListPostDto);

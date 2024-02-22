@@ -20,11 +20,11 @@ namespace Spotify_API.Controllers
 
         // GET: api/<PlayListController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(int? page = null, int? perPage = null, string playListName = null)
         {
             try
             {
-                var playlist = await _playlistService.GetAsync();
+                var playlist = await _playlistService.GetAsync(page, perPage, playListName);
                 return Ok(playlist);
             }
             catch (Exception ex)

@@ -69,13 +69,31 @@ namespace Spotify_API.Services.Concrete
         }
 
 
-        public async Task<List<PlaylistGetDto>> GetAsync()
+        public async Task<List<PlaylistGetDto>> GetAsync(int? page = null, int? perPage = null, string playListName = null)
         {
 
-            var playlists = await _context.Playlists.ToListAsync();
-            var playlist = _mapper.Map<List<PlaylistGetDto>>(playlists);
+            IQueryable<Playlist> query = _context.Playlists;
 
-            return playlist;
+            if (!string.IsNullOrEmpty(playListName))
+            {
+                query = query.Where(p => p.Title.Contains(playListName));
+            }
+
+            if (page.HasValue && perPage.HasValue)
+            {
+                int totalCount = await query.CountAsync();
+                int totalPages = (int)Math.Ceiling((double)totalCount / perPage.Value);
+                page = Math.Min(Math.Max(page.Value, 1), totalPages);
+
+                int skip = (page.Value - 1) * perPage.Value;
+
+                query = query.Skip(skip).Take(perPage.Value);
+            }
+
+            var playlists = await query.ToListAsync();
+            var playlistDtos = _mapper.Map<List<PlaylistGetDto>>(playlists);
+
+            return playlistDtos;
         }
 
         public async Task<PlaylistDetailDto> GetDetailAsync(int id)

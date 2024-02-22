@@ -22,6 +22,11 @@ namespace Spotify_API.Services.Concrete
 
         public async Task CreateAsync(GenrePostDto genrePostDto)
         {
+            var existingGenre = await _context.Genres.FirstOrDefaultAsync(g => g.Name == genrePostDto.Name);
+            if (existingGenre != null)
+            {
+                throw new ArgumentException("A genre with the same name already exists.");
+            }
 
             var genre = new Genre();
             _mapper.Map(genrePostDto, genre);
@@ -38,10 +43,14 @@ namespace Spotify_API.Services.Concrete
         }
 
 
-        public async Task<List<GenreGetDto>> GetAllAsync(int? page = null, int? perPage = null)
+        public async Task<List<GenreGetDto>> GetAllAsync(int? page = null, int? perPage = null, string genreName = null)
         {
             IQueryable<Genre> query = _context.Genres;
 
+            if (!string.IsNullOrEmpty(genreName))
+            {
+                query = query.Where(a => a.Name.Contains(genreName));
+            }
             if (page.HasValue && perPage.HasValue)
             {
                 int totalCount = await query.CountAsync();

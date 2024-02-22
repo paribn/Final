@@ -10,7 +10,7 @@ namespace Spotify_API.Services.Abstract
         Task DeleteAsync(int id);
 
 
-        Task<List<ArtistGetDto>> GetAllAsync();
+        Task<List<ArtistGetDto>> GetAllAsync(int? page = null, int? perPage = null, string artistName = null);
 
         Task<ArtistGetDetail> GetDetailAsync(int id);
 

@@ -25,23 +25,22 @@ namespace Spotify_API.Services.Concrete
             var artistExists = await _context.Artists.AnyAsync(a => a.Id == musicPostDto.ArtistId);
             if (!artistExists)
             {
-                throw new ArgumentException("Geçersiz sanatçı ID'si.");
+                throw new ArgumentException("Invalid type ID.");
             }
 
             var albumExists = await _context.Albums.AnyAsync(a => a.Id == musicPostDto.AlbumId);
             if (!albumExists)
             {
-                throw new ArgumentException("Geçersiz albüm ID'si.");
+                throw new ArgumentException("Invalid type ID.");
             }
 
             var genres = await _context.Genres.Where(g => musicPostDto.GenreId.Contains(g.Id)).ToListAsync();
             if (genres == null || !genres.Any())
             {
-                throw new ArgumentException("Geçersiz tür ID'si.");
+                throw new ArgumentException("Invalid type ID.");
             }
 
             var music = _mapper.Map<Music>(musicPostDto);
-            //music.Name = musicPostDto.Title;
             music.MusicGenres = genres.Select(genre => new MusicGenre { GenreId = genre.Id }).ToList();
 
             var coverImageFile = musicPostDto.PhotoUrl;
@@ -62,46 +61,31 @@ namespace Spotify_API.Services.Concrete
 
 
 
-        public async Task<List<MusicGetDto>>? GetAsync(int page)
+        public async Task<List<MusicGetDto>>? GetAsync(int? page = null, int? perPage = null, string name = null)
         {
+            IQueryable<Music> query = _context.Musics.Include(x => x.Artist)
+                .Include(a => a.Album);
 
-            var pageResult = 3f;
-            var pageCount = Math.Ceiling(_context.Musics.Count() / pageResult);
-
-            var musicGetDtos = await _context.Musics
-                .Include(x => x.Artist)
-                .Include(x => x.Album)
-                .Select(x => _mapper.Map(x, new MusicGetDto()))
-                .Skip((page - 1) * (int)pageResult)
-                .Take((int)pageResult)
-                .AsNoTracking()
-                .ToListAsync();
-
-            var response = new MusicResponse
+            if (!string.IsNullOrEmpty(name))
             {
-                Musics = musicGetDtos,
-                CurrentPages = page,
-                Pages = (int)pageCount
-            };
+                query = query.Where(a => a.Name.Contains(name));
+            }
+            if (page.HasValue && perPage.HasValue)
+            {
+                int totalCount = await query.CountAsync();
+                int totalPages = (int)Math.Ceiling((double)totalCount / perPage.Value);
+                page = Math.Min(Math.Max(page.Value, 1), totalPages);
 
-            return musicGetDtos;
+                int skip = (page.Value - 1) * perPage.Value;
 
+                query = query.Skip(skip).Take(perPage.Value);
+            }
 
+            var musics = await query.ToListAsync();
+            var musicDtos = _mapper.Map<List<MusicGetDto>>(musics);
 
+            return musicDtos;
 
-
-
-            //var totalCount = _context.Musics.Count();
-
-            //var totalPages = (int)Math.Ceiling((decimal)totalCount / pageSize);
-            //var musicPerPage = await _context.Musics
-            //    .Include(x => x.Artist)
-            //    .Include(x => x.Album)
-            //    .Skip((page - 1) * pageSize)
-            //    .Take(pageSize)
-            //    .Select(x => _mapper.Map(x, new MusicGetDto()))
-            //    .AsNoTracking()
-            //    .ToListAsync(); // disabled
         }
 
         public async Task<MusicGetDetail> GetDetailAsync(int id)
