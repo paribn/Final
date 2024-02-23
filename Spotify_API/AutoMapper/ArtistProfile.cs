@@ -10,10 +10,10 @@ namespace Spotify_API.AutoMapper
     {
         public ArtistProfile()
         {
-
             // create artist post
             CreateMap<ArtistPostDto, Artist>()
             .ForMember(dest => dest.ArtistType, opt => opt.MapFrom(src => src.ArtistTypes))
+            .ForMember(dest => dest.ArtistPhoto, opt => opt.MapFrom(src => src.PhotoPath.Select(p => new ArtistPhoto { PhotoPath = p.FileName }).ToList()))
             .ReverseMap();  /// burada yalnizz artissst add olur 
 
             CreateMap<ArtistPutDto, Artist>().ReverseMap();

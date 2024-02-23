@@ -464,6 +464,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Bruno Mars.jpg6f8d69b4-a632-46bb-8831-6d91f92acc1b.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\delish-220517-dirty-shirley-cocktail-001-ab-web-1657145301.jpg3e8eb791-2819-468a-b4ad-5ef7c2e9ed14.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/delish-220517-dirty-shirley-cocktail-001-ab-web-1657145301.jpg3e8eb791-2819-468a-b4ad-5ef7c2e9ed14.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\delish-220517-dirty-shirley-cocktail-001-ab-web-1657145301.jpg3e8eb791-2819-468a-b4ad-5ef7c2e9ed14.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\delish-220517-dirty-shirley-cocktail-001-ab-web-1657145301.jpg606f0797-c82f-4329-a1cc-56b793a6ddf6.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/delish-220517-dirty-shirley-cocktail-001-ab-web-1657145301.jpg606f0797-c82f-4329-a1cc-56b793a6ddf6.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\delish-220517-dirty-shirley-cocktail-001-ab-web-1657145301.jpg606f0797-c82f-4329-a1cc-56b793a6ddf6.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\e0b1d3_9ae30e6e6ef54c63b3b31c8632a99881~mv2.jpeg4ad34218-e1ad-4e69-a8be-592644030675.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
@@ -543,6 +575,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\lana.jpg2d59a782-dfda-4e33-ba17-faae628cb993.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\lana.jpgde2f1162-1c24-450a-8acc-67d2a6b795a8.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/lana.jpgde2f1162-1c24-450a-8acc-67d2a6b795a8.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\lana.jpgde2f1162-1c24-450a-8acc-67d2a6b795a8.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Lazy song bruno.jpg7147236b-14a4-45d8-b024-642b57c054fd.jpg))">
       <SourceType>Package</SourceType>
@@ -639,6 +687,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Photography-by-Snowdon-Copyright-Queen-Productions-Ltd-copy.jpga7e412f4-a801-4a65-b029-3b902b196a8b.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Photography-by-Snowdon-Copyright-Queen-Productions-Ltd-copy.jpgc76384d1-6c7c-499c-9d7b-d4fad3877a92.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/Photography-by-Snowdon-Copyright-Queen-Productions-Ltd-copy.jpgc76384d1-6c7c-499c-9d7b-d4fad3877a92.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Photography-by-Snowdon-Copyright-Queen-Productions-Ltd-copy.jpgc76384d1-6c7c-499c-9d7b-d4fad3877a92.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Queen 1.jpg4513fbe8-2a3a-4494-8591-0a9ae87630aa.jpg))">
       <SourceType>Package</SourceType>
@@ -880,6 +944,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\thumb-1920-800337.jpg54b4e0ff-c0b1-43b4-bc0e-571194207b4d.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\unnamed.jpg01c0f79a-563f-4f1b-ba4d-b43497dcb70c.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/unnamed.jpg01c0f79a-563f-4f1b-ba4d-b43497dcb70c.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\unnamed.jpg01c0f79a-563f-4f1b-ba4d-b43497dcb70c.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\unnamed.jpg48c01344-1853-47e8-9d87-d4aa402a71dc.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Spotify_API</SourceId>
@@ -895,6 +975,70 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\unnamed.jpg48c01344-1853-47e8-9d87-d4aa402a71dc.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2023-12-07 at 10.58.09 AM.jpeg0c9c7474-f423-42cd-af1e-662cbaa62230.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/WhatsApp Image 2023-12-07 at 10.58.09 AM.jpeg0c9c7474-f423-42cd-af1e-662cbaa62230.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2023-12-07 at 10.58.09 AM.jpeg0c9c7474-f423-42cd-af1e-662cbaa62230.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2024-01-21 at 10.53.03.jpeg8f3a0763-39f9-4e35-a6ec-ea1623a21290.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/WhatsApp Image 2024-01-21 at 10.53.03.jpeg8f3a0763-39f9-4e35-a6ec-ea1623a21290.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2024-01-21 at 10.53.03.jpeg8f3a0763-39f9-4e35-a6ec-ea1623a21290.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2024-01-21 at 10.53.03.jpeg919b687c-970d-4de3-bb98-a04c43641a66.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/WhatsApp Image 2024-01-21 at 10.53.03.jpeg919b687c-970d-4de3-bb98-a04c43641a66.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2024-01-21 at 10.53.03.jpeg919b687c-970d-4de3-bb98-a04c43641a66.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2024-02-06 at 12.43.21.jpegc276beb5-6b63-46f0-840e-69c9ff498ed3.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spotify_API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spotify_API</BasePath>
+      <RelativePath>Images/WhatsApp Image 2024-02-06 at 12.43.21.jpegc276beb5-6b63-46f0-840e-69c9ff498ed3.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\WhatsApp Image 2024-02-06 at 12.43.21.jpegc276beb5-6b63-46f0-840e-69c9ff498ed3.jpeg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\mp3\Andrea Vanzo Soulmate.mp3d5f5f416-9959-4aa5-b933-76184923fa5d.mp3))">
       <SourceType>Package</SourceType>

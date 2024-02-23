@@ -4,7 +4,8 @@ namespace Spotify_API.DTO.Artist
 {
     public class ArtistPhotoUpdateDto
     {
-        public IFormFile? PhotoPath { get; set; }
+        public List<IFormFile> PhotoPath { get; set; }
+        public bool IsMain { get; set; }
 
         public class ArtistPhotoDtoValidator : AbstractValidator<ArtistPhotoUpdateDto>
         {
@@ -17,13 +18,18 @@ namespace Spotify_API.DTO.Artist
 
             }
 
-            private bool BeAValidImageFile(IFormFile file)
+            private bool BeAValidImageFile(List<IFormFile> files)
             {
-                if (file == null) return true;
+                foreach (var file in files)
+                {
+                    if (file == null) continue;
 
-                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
-                var fileExtension = System.IO.Path.GetExtension(file.FileName).ToLower();
-                return allowedExtensions.Contains(fileExtension);
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+                    var fileExtension = System.IO.Path.GetExtension(file.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                        return false;
+                }
+                return true;
             }
         }
     }

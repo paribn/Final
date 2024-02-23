@@ -24,31 +24,20 @@ namespace Spotify_API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> SearchAsync(string genreName = null, string artistName = null, string musicName = null, string albumName = null, int? page = null, int? perPage = null)
+        public async Task<ActionResult> SearchAsync(string input = null, int? page = null, int? perPage = null)
         {
             IQueryable<Music> query = _context.Musics
                 .Include(x => x.Album)
                 .Include(x => x.Artist)
                 .Include(x => x.MusicGenres)
                 .ThenInclude(x => x.Genre);
-            if (!string.IsNullOrEmpty(artistName))
-            {
-                query = query.Where(a => a.Artist.Name.Contains(artistName));
-            }
 
-            if (!string.IsNullOrEmpty(musicName))
+            if (!string.IsNullOrEmpty(input))
             {
-                query = query.Where(a => a.Name.Contains(musicName));
-            }
-
-            if (!string.IsNullOrEmpty(albumName))
-            {
-                query = query.Where(a => a.Album.Title.Contains(albumName));
-            }
-
-            if (!string.IsNullOrEmpty(genreName))
-            {
-                query = query.Where(a => a.MusicGenres.Any(mg => mg.Genre.Name.Contains(genreName)));
+                query = query.Where(a => a.Artist.Name.Contains(input) ||
+                                         a.Name.Contains(input) ||
+                                         a.Album.Title.Contains(input) ||
+                                         a.MusicGenres.Any(mg => mg.Genre.Name.Contains(input)));
             }
 
             int totalCount = await query.CountAsync();
@@ -88,9 +77,9 @@ namespace Spotify_API.Controllers
                 }
             }).ToListAsync();
 
-
             return Ok(music);
         }
+
 
     }
 

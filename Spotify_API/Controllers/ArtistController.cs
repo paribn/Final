@@ -48,7 +48,7 @@ namespace Spotify_API.Controllers
 
         // POST api/<ArtistController>
         [HttpPost("CreateArtist")]
-        public async Task<IActionResult> Post([FromBody] ArtistPostDto dto)
+        public async Task<IActionResult> Post([FromForm] ArtistPostDto dto)
         {
             try
             {
@@ -93,33 +93,33 @@ namespace Spotify_API.Controllers
 
 
 
-        [HttpPost("CreateArtistPhoto")]
-        public async Task<IActionResult> AddPhoto([FromForm] ArtistPhotoCreateDto dto)
-        {
-            try
-            {
-                await _artist.AddPhoto(dto);
-                return Ok("Artist created successfully");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Error creating artist: {ex.Message}");
-            }
-        }
+        //[HttpPost("CreateArtistPhoto")]
+        //public async Task<IActionResult> AddPhoto([FromForm] ArtistPhotoCreateDto dto)
+        //{
+        //    try
+        //    {
+        //        await _artist.AddPhoto(dto);
+        //        return Ok("Artist created successfully");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"Error creating artist: {ex.Message}");
+        //    }
+        //}
 
 
-        [HttpPut("UpdateArtistPhoto")]
-        public async Task<IActionResult> UpdatePhoto(int id, [FromForm] ArtistPhotoUpdateDto photoDto)
-        {
-            try
-            {
-                await _artist.UpdatePhoto(id, photoDto);
-                return Ok("Artist created successfully");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"Error creating artist: {ex.Message}");
-            }
-        }
+        //[HttpPut("UpdateArtistPhoto")]
+        //public async Task<IActionResult> UpdatePhoto(int id, [FromForm] ArtistPhotoUpdateDto photoDto)
+        //{
+        //    try
+        //    {
+        //        await _artist.UpdatePhoto(photoDto, id);
+        //        return Ok("Artist pp changed successfully");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"Error creating artist: {ex.Message}");
+        //    }
+        //}
     }
 }
