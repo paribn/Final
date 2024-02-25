@@ -6,7 +6,7 @@ namespace Spotify_API.Services.Abstract
     {
         Task<ApiResponse> RegisterAsync(RegisterDto registerDto);
         Task LogoutAsync();
-        Task<string?> LoginAsync(LoginDto loginDto);
+        Task<object?> LoginAsync(LoginDto loginDto);
 
         Task<ApiResponse> ResetPassword(ResetPasswordDto resetPasswordDto);
         Task ConfirmEmailAsync(string userId, string token);

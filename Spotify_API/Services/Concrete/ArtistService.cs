@@ -66,12 +66,32 @@ namespace Spotify_API.Services.Concrete
 
         public async Task DeleteAsync(int id)
         {
-            var artist = _context.Artists.FirstOrDefault(x => x.Id == id);
+            //var artist = _context.Artists.FirstOrDefault(x => x.Id == id);
+
+
+            //_context.Remove(artist);
+            //await _context.SaveChangesAsync();
+
+            var artist = _context.Artists.Include(x => x.ArtistPhoto).FirstOrDefault(x => x.Id == id);
             if (artist is null)
                 throw new ArgumentNullException(nameof(artist), "Artist not found");
+            if (artist.ArtistPhoto != null)
+            {
+                foreach (var file in artist.ArtistPhoto)
+                {
+                    _fileService.DeleteFile(file.PhotoPath);
+                }
+            }
+            _context.Artists.Remove(artist);
+            _context.SaveChanges();
 
-            _context.Remove(artist);
-            await _context.SaveChangesAsync();
+
+            //var albums = await _context.Albums.FirstOrDefaultAsync(x => x.Id == id);
+            //if (albums is null) throw new Exception("Something went wrong!");
+            //_fileService.DeleteFile(albums.CoverImage);
+
+            //_context.Albums.Remove(albums);
+            //await _context.SaveChangesAsync();
         }
 
 
@@ -118,13 +138,39 @@ namespace Spotify_API.Services.Concrete
 
         public async Task UpdateAsync(int id, ArtistPutDto artistPutDto)
         {
-            var artist = await _context.Artists.FirstOrDefaultAsync(x => x.Id == id);
+            var artist = await _context.Artists.Include(x => x.ArtistPhoto).FirstOrDefaultAsync(x => x.Id == id);
             if (artist == null)
             {
                 throw new Exception("Artist not found");
             }
 
             _mapper.Map(artistPutDto, artist);
+
+            if (artistPutDto.PhotoPath != null)
+            {
+                if (artist.ArtistPhoto != null)
+                {
+                    foreach (var file in artist.ArtistPhoto)
+                    {
+                        _fileService.DeleteFile(file.PhotoPath);
+                    }
+                }
+            }
+
+            List<ArtistPhoto> photos = new List<ArtistPhoto>();
+
+            foreach (var file in artistPutDto.PhotoPath)
+            {
+                photos.Add(new()
+                {
+                    PhotoPath = _fileService.UploadFile(file)
+                });
+            }
+
+            photos.FirstOrDefault().IsMain = true;
+            artist.ArtistPhoto = photos;
+
+            _context.Artists.Update(artist);
 
             await _context.SaveChangesAsync();
 

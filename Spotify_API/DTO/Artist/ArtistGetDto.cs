@@ -8,6 +8,7 @@ namespace Spotify_API.DTO.Artist
         public string Name { get; set; }
 
         public ArtistTypes ArtistType { get; set; }
+
         public List<ArtistPhotoGetDto> artistPhotos { get; set; }
     }
 }

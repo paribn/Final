@@ -48,13 +48,13 @@ namespace Spotify_API.AutoMapper
                 })));
 
 
-            // artist photo add
-            CreateMap<ArtistPhotoCreateDto, ArtistPhoto>()
-            .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath))
-            .ReverseMap();
+            //// artist photo add
+            //CreateMap<ArtistPhotoCreateDto, ArtistPhoto>()
+            //.ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath))
+            //.ReverseMap();
 
-            CreateMap<ArtistPhotoUpdateDto, ArtistPhoto>()
-                .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath)).ReverseMap();
+            //CreateMap<ArtistPhotoUpdateDto, ArtistPhoto>()
+            //    .ForMember(dest => dest.PhotoPath, opt => opt.MapFrom(src => src.PhotoPath)).ReverseMap();
 
         }
 

@@ -26,8 +26,25 @@ namespace Spotify_API.DTO.Artist
                .Must(name => !string.IsNullOrWhiteSpace(name)).WithMessage("About must not consist only of white spaces!")
                .Length(1, 1000).WithMessage("Can't be less than 1  more than 1000  characters!");
 
+                RuleFor(xx => xx.PhotoPath)
+                 .NotNull().WithMessage("The photo file cannot be empty.")
+                 .Must(BeValidImageFiles).WithMessage("Invalid photo file type. Only image files are accepted.");
+
                 RuleFor(x => x.ArtistTypes).NotNull();
 
+            }
+            private bool BeValidImageFiles(List<IFormFile> files)
+            {
+                foreach (var file in files)
+                {
+                    if (file == null) continue;
+
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+                    var fileExtension = System.IO.Path.GetExtension(file.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                        return false;
+                }
+                return true;
             }
 
         }

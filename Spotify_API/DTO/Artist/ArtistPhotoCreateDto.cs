@@ -9,7 +9,7 @@ namespace Spotify_API.DTO.Artist
         public int ArtistId { get; set; }
 
 
-        public class ArtistPhotoDtoValidator : AbstractValidator<ArtistPhotoCreateDto>
+        public class ArtistPhotoDtoValidator : AbstractValidator<ArtistPhotoCreateDto>//ishlemir
         {
             public ArtistPhotoDtoValidator()
             {

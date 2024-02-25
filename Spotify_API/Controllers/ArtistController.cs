@@ -63,7 +63,7 @@ namespace Spotify_API.Controllers
 
         // PUT api/<ArtistController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] ArtistPutDto dto)
+        public async Task<IActionResult> Put(int id, [FromForm] ArtistPutDto dto)
         {
             try
             {

@@ -9,6 +9,7 @@ namespace Spotify_API.DTO.Artist
         public string About { get; set; }
         public ArtistTypes ArtistType { get; set; }
 
+        public List<IFormFile>? PhotoPath { get; set; }
 
         public class ArtistPutDtoValidator : AbstractValidator<ArtistPutDto>
         {

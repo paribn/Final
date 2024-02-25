@@ -55,7 +55,7 @@ namespace Spotify_API.Services.Concrete
                 };
             }
 
-            await _userManager.AddToRoleAsync(user, Roles.Admin.ToString());
+            await _userManager.AddToRoleAsync(user, Roles.User.ToString());
 
             return new ApiResponse { ErrorMessage = null, StatusMessage = "Success" };
         }
@@ -89,17 +89,32 @@ namespace Spotify_API.Services.Concrete
 
 
 
-        public async Task<string?> LoginAsync(LoginDto loginDto)
+        //public async Task<string?> LoginAsync(LoginDto loginDto)
+        //{
+        //    var user = await _userManager.FindByEmailAsync(loginDto.Email);
+
+        //    if (!await _userManager.CheckPasswordAsync(user, loginDto.Password)) return null;
+
+        //    var roles = await _userManager.GetRolesAsync(user);
+
+        //    string token = _tokenService.GenerateToken(user.Email, user.UserName, (List<string>)roles);
+
+        //    return new { Email = user.Email, Token = token };
+        //}
+
+        public async Task<object> LoginAsync(LoginDto loginDto)
         {
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
 
-            if (!await _userManager.CheckPasswordAsync(user, loginDto.Password)) return null;
+            if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
+                return new { Email = (string)null, Token = (string)null };
 
             var roles = await _userManager.GetRolesAsync(user);
 
             string token = _tokenService.GenerateToken(user.Email, user.UserName, (List<string>)roles);
 
-            return token;
+            return new { Email = user.Email, Token = token };
         }
+
     }
 }
