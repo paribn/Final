@@ -8,7 +8,7 @@ namespace Spotify_API.DTO.Music
         public IFormFile? MusicUrl { get; set; }
         public IFormFile? PhotoUrl { get; set; }
 
-        public int AlbumId { get; set; }
+        public int? AlbumId { get; set; }
         public int ArtistId { get; set; }
         public List<int>? GenreId { get; set; }
 
@@ -30,9 +30,9 @@ namespace Spotify_API.DTO.Music
                   .NotEmpty().WithMessage("Something went wrong")
                   .NotNull().WithMessage("Required!");
 
-                RuleFor(x => x.AlbumId)
-                  .NotEmpty().WithMessage("Something went wrong")
-                  .NotNull().WithMessage("Required!");
+                //RuleFor(x => x.AlbumId)
+                //  .NotEmpty().WithMessage("Something went wrong")
+                //  .NotNull().WithMessage("Required!");
 
                 RuleFor(music => music.PhotoUrl)
                     .NotNull().WithMessage("The photo file cannot be empty.")

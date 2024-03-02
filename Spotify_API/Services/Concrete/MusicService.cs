@@ -28,11 +28,11 @@ namespace Spotify_API.Services.Concrete
                 throw new ArgumentException("Invalid type ID.");
             }
 
-            var albumExists = await _context.Albums.AnyAsync(a => a.Id == musicPostDto.AlbumId);
-            if (!albumExists)
-            {
-                throw new ArgumentException("Invalid type ID.");
-            }
+            //var albumExists = await _context.Albums.AnyAsync(a => a.Id == musicPostDto.AlbumId);
+            //if (!albumExists)
+            //{
+            //    throw new ArgumentException("Invalid type ID.");
+            //}
 
             var genres = await _context.Genres.Where(g => musicPostDto.GenreId.Contains(g.Id)).ToListAsync();
             if (genres == null || !genres.Any())

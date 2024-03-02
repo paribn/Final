@@ -25,6 +25,8 @@ namespace Spotify_API.AutoMapper
                     PhotoPath = x.PhotoPath
                 })));
 
+            CreateMap<ArtistPhoto, ArtistPhotoGetDto>();
+
 
             CreateMap<Artist, ArtistGetDetail>()
                 .ForMember(dest => dest.artistPhotos, opt => opt.MapFrom(src => src.ArtistPhoto.Select(x => new ArtistPhotoGetDto

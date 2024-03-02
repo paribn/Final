@@ -1,4 +1,5 @@
-﻿using Spotify_API.DTO.Music;
+﻿using Spotify_API.DTO.Artist;
+using Spotify_API.DTO.Music;
 
 namespace Spotify_API.DTO.Genre
 {
@@ -9,5 +10,7 @@ namespace Spotify_API.DTO.Genre
         public string Name { get; set; }
 
         public List<MusicGetDto> Musics { get; set; }
+
+        public List<ArtistGetDto> Artists { get; set; }
     }
 }

@@ -3,7 +3,6 @@
     public class ArtistPhotoGetDto
     {
         public int Id { get; set; }
-        public string PhotoPath { get; set; }//ishlemir
-
+        public string PhotoPath { get; set; }
     }
 }

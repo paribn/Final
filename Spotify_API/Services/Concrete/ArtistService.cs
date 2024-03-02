@@ -66,11 +66,6 @@ namespace Spotify_API.Services.Concrete
 
         public async Task DeleteAsync(int id)
         {
-            //var artist = _context.Artists.FirstOrDefault(x => x.Id == id);
-
-
-            //_context.Remove(artist);
-            //await _context.SaveChangesAsync();
 
             var artist = _context.Artists.Include(x => x.ArtistPhoto).FirstOrDefault(x => x.Id == id);
             if (artist is null)

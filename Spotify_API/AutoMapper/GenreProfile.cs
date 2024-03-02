@@ -14,7 +14,10 @@ namespace Spotify_API.AutoMapper
 
 
             CreateMap<Genre, GenreGetDetail>()
-             .ForMember(dest => dest.Musics, opt => opt.MapFrom(src => src.MusicGenres.Select(mg => mg.Music)));
+            .ForMember(dest => dest.Musics, opt => opt.MapFrom(src => src.MusicGenres.Select(mg => mg.Music)))
+            .ForMember(dest => dest.Artists, opt => opt.MapFrom(src => src.MusicGenres.Select(x => x.Music.Artist)));
+
+
 
             CreateMap<Genre, GenreGetDto>().ReverseMap();
             CreateMap<Genre, GenrePutDto>().ReverseMap();
