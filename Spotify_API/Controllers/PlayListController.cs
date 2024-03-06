@@ -33,6 +33,20 @@ namespace Spotify_API.Controllers
             }
         }
 
+        [HttpGet("GetUserPlaylist")]
+        public async Task<IActionResult> GetUser(int? page = null, int? perPage = null, string playListName = null, string userId = null)
+        {
+            try
+            {
+                var playlist = await _playlistService.PlaylistGetUser(page, perPage, playListName, userId);
+                return Ok(playlist);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error creating: {ex.Message}");
+            }
+        }
+
         // GET api/<PlayListController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)

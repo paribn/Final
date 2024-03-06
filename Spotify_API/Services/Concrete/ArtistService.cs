@@ -139,7 +139,6 @@ namespace Spotify_API.Services.Concrete
                 throw new Exception("Artist not found");
             }
 
-            _mapper.Map(artistPutDto, artist);
 
             if (artistPutDto.PhotoPath != null)
             {
@@ -150,20 +149,23 @@ namespace Spotify_API.Services.Concrete
                         _fileService.DeleteFile(file.PhotoPath);
                     }
                 }
-            }
 
-            List<ArtistPhoto> photos = new List<ArtistPhoto>();
-
-            foreach (var file in artistPutDto.PhotoPath)
-            {
-                photos.Add(new()
+                List<ArtistPhoto> photos = new List<ArtistPhoto>();
+                foreach (var file in artistPutDto.PhotoPath)
                 {
-                    PhotoPath = _fileService.UploadFile(file)
-                });
+                    photos.Add(new()
+                    {
+                        PhotoPath = _fileService.UploadFile(file)
+                    });
+                }
+
+                photos.FirstOrDefault().IsMain = true;
+                artist.ArtistPhoto = photos;
+
+
             }
 
-            photos.FirstOrDefault().IsMain = true;
-            artist.ArtistPhoto = photos;
+            _mapper.Map(artistPutDto, artist);
 
             _context.Artists.Update(artist);
 

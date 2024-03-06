@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Spotify_API.DTO.Account;
 using Spotify_API.Entities;
+using Spotify_API.Helpers.Enum;
 using Spotify_API.Services.Abstract;
 using System.Web;
-using static Spotify_API.DTO.Account.RegisterDto;
 using static Spotify_API.DTO.Account.ResetPasswordDto;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -34,40 +34,39 @@ namespace Spotify_API.Controllers
         {
             try
             {
-                RegisterDtoValidator validator = new();
-
-                var validationResult = validator.Validate(registerDto);
-
-                if (!validationResult.IsValid)
+                var user = new AppUser
                 {
-                    var response = new ApiResponse
-                    {
-                        ErrorMessage = validationResult.Errors.Select(m => m.ErrorMessage).ToList(),
-                        StatusMessage = "Failed"
-                    };
-                    return BadRequest(response);
+                    FullName = registerDto.FullName,
+                    Email = registerDto.Email,
+                    UserName = registerDto.Email
+                };
+
+                var existingUser = await _userManager.FindByNameAsync(registerDto.Username);
+                if (existingUser != null)
+                {
+                    return BadRequest("Username already exists.");
                 }
 
-                await _accountService.RegisterAsync(registerDto);
+                var existingEmail = await _userManager.FindByEmailAsync(registerDto.Email);
+                if (existingEmail != null)
+                {
+                    return BadRequest("Email address is already in use.");
+                }
 
-                var user = await _userManager.FindByEmailAsync(registerDto.Email);
+                var result = await _userManager.CreateAsync(user, registerDto.Password);
+                if (!result.Succeeded) return BadRequest();
 
-                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                await _userManager.AddToRoleAsync(user, Roles.User.ToString());
 
-                //var link = Url.Action(nameof(ConfirmEmail), "Account", new { userId = user.Id, token },
-                //    Request.Scheme, Request.Host.ToString());
-
-                //if (link == null) throw new NullReferenceException(nameof(link));
-
-                //_emailService.Register(registerDto, link);
-
-                return Ok();
+                return Ok(result);
             }
             catch (Exception ex)
             {
                 return BadRequest(new ApiResponse { ErrorMessage = new List<string> { ex.Message } });
             }
         }
+
+
 
 
 
@@ -96,14 +95,14 @@ namespace Spotify_API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> ConfirmEmail(string userId, string token)
-        {
-            if (userId == null || token == null) return BadRequest();
+        //public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        //{
+        //    if (userId == null || token == null) return BadRequest();
 
-            await _accountService.ConfirmEmailAsync(userId, token);
+        //    await _accountService.ConfirmEmailAsync(userId, token);
 
-            return Redirect("http://localhost:5159/Login");
-        }
+        //    return Redirect("http://localhost:3002/Login");
+        //}
 
 
         [HttpPost("ForgotPassword")]
@@ -111,12 +110,13 @@ namespace Spotify_API.Controllers
         {
             try
             {
+
                 var exsistUser = await _userManager.FindByEmailAsync(forgotPasswordDto.Email);
                 if (exsistUser == null) return NotFound("User not found");
 
                 var token = await _userManager.GeneratePasswordResetTokenAsync(exsistUser);
 
-                var link = $"http://localhost:5159/ResetPassword?email={exsistUser.Email}&token={HttpUtility.UrlEncode(token)}";
+                var link = $"http://localhost:3002/ResetPassword?email={exsistUser.Email}&token={HttpUtility.UrlEncode(token)}";
 
                 if (link == null) throw new NullReferenceException(nameof(link));
 
@@ -154,7 +154,7 @@ namespace Spotify_API.Controllers
 
                 await _accountService.ResetPassword(resetPasswordDto);
 
-                return Redirect("http://localhost:5159/Login");
+                return Redirect("http://localhost:3002/Login");
             }
             catch (Exception ex)
             {

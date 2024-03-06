@@ -96,6 +96,15 @@ namespace Spotify_API.Services.Concrete
             return playlistDtos;
         }
 
+
+
+
+
+
+
+
+
+
         public async Task<PlaylistDetailDto> GetDetailAsync(int id)
         {
             var genre = await _context.Playlists
@@ -136,5 +145,40 @@ namespace Spotify_API.Services.Concrete
             await _context.SaveChangesAsync();
         }
 
+        public async Task<List<PlaylistGetUser>> PlaylistGetUser(int? page = null, int? perPage = null, string playListName = null, string userId = null)
+        {
+            IQueryable<Playlist> query = _context.Playlists;
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                query = query.Where(p => p.AppUserId == userId);
+            }
+            else
+            {
+                throw new ArgumentException("User ID is required.");
+            }
+
+            if (!string.IsNullOrEmpty(playListName))
+            {
+                query = query.Where(p => p.Title.Contains(playListName));
+            }
+
+            if (page.HasValue && perPage.HasValue)
+            {
+                int totalCount = await query.CountAsync();
+                int totalPages = (int)Math.Ceiling((double)totalCount / perPage.Value);
+                page = Math.Min(Math.Max(page.Value, 1), totalPages);
+
+                int skip = (page.Value - 1) * perPage.Value;
+
+                query = query.Skip(skip).Take(perPage.Value);
+            }
+
+            var playlists = await query.ToListAsync();
+            var playlistDtos = _mapper.Map<List<PlaylistGetUser>>(playlists);
+
+            return playlistDtos;
+        }
     }
+
 }

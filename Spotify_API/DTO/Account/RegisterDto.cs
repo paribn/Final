@@ -8,11 +8,10 @@ namespace Spotify_API.DTO.Account
         public string FullName { get; set; }
         public string? Username { get; set; }
         public string Email { get; set; }
-
-        //public int Age { get; set; }
-        //public Gender Gender { get; set; }
         public string Password { get; set; }
-        public string? ConfirmPassword { get; set; }
+
+
+        //public string? ConfirmPassword { get; set; }
 
         public class RegisterDtoValidator : AbstractValidator<RegisterDto>
         {
@@ -28,16 +27,12 @@ namespace Spotify_API.DTO.Account
                     .EmailAddress().WithMessage("Invalid email format.")
                     .Must(x => IsEmailValid(x)).WithMessage("Invalid email format. Email should end with '.com' or '.ru'.");
 
-
-                //RuleFor(u => u.Age).GreaterThanOrEqualTo(12).WithMessage("You are under the age limit to create a account");
-
                 RuleFor(x => x.Password)
                  .NotEmpty().WithMessage("Password field is required!")
                  .MinimumLength(4).WithMessage("Password must be at least 4 characters long.")
                  .Must(x => HasLetterAndDigit(x)).WithMessage("Password must contain at least one letter and one digit.");
 
-                //RuleFor(x => x.Gender)
-                //.IsInEnum().WithMessage("Invalid gender.");
+
             }
 
             private bool IsEmailValid(string value)

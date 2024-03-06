@@ -8,10 +8,9 @@
         public string MusicUrl { get; set; }
         public string PhotoUrl { get; set; }
 
-        //public List<ArtistGetDto> Artists { get; set; }
 
-        //public string? Artistname { get; set; }
-
+        public string? Artistname { get; set; }
+        public int? ArtistId { get; set; }
 
 
         //ALL SEARCH METHOD

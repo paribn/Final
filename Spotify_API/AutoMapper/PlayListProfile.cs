@@ -17,6 +17,10 @@ namespace Spotify_API.AutoMapper
                 .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title)).ReverseMap();
 
 
+            CreateMap<Playlist, PlaylistGetUser>().
+             ForMember(dest => dest.AppUserId, opt => opt.MapFrom(src => src.AppUserId))
+            .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title)).ReverseMap();
+
             CreateMap<Playlist, PlaylistDetailDto>()
                 .ForMember(dest => dest.musicGets, opt => opt.MapFrom(src => src.MusicPlayLists.Select(m => m.Music)));
 

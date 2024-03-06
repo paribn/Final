@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Atd0zcT5MofwL0mncvbHMnsPGXTexcoP5RZR0Xv6S8A=",
+  "Hash": "FMfpztpOM2uuTLfZZ66M4LNpfcY2923MNwiMIsvWsP4=",
   "Source": "Spotify_API",
   "BasePath": "_content/Spotify_API",
   "Mode": "Default",
@@ -287,6 +287,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\ab67616d0000b273192fb737c6faf1680fb5ed04.jpg069b9533-f9fa-4c44-9ff5-0bca336bb039.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\ab67616d0000b273192fb737c6faf1680fb5ed04.jpgbd0979f7-a10e-49e6-9973-c81bcdbcee0c.jpg",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Images/ab67616d0000b273192fb737c6faf1680fb5ed04.jpgbd0979f7-a10e-49e6-9973-c81bcdbcee0c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ab67616d0000b273192fb737c6faf1680fb5ed04.jpgbd0979f7-a10e-49e6-9973-c81bcdbcee0c.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\ab67616d0000b2731de3187680d052813e7fd4d0.jpeg17e37025-2271-4074-954e-96b182470550.jpeg",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Images/ab67616d0000b2731de3187680d052813e7fd4d0.jpeg17e37025-2271-4074-954e-96b182470550.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ab67616d0000b2731de3187680d052813e7fd4d0.jpeg17e37025-2271-4074-954e-96b182470550.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\ab67616d0000b2731de3187680d052813e7fd4d0.jpega8b0a2d3-519c-4230-ab78-ac7f431ad457.jpeg",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Images/ab67616d0000b2731de3187680d052813e7fd4d0.jpega8b0a2d3-519c-4230-ab78-ac7f431ad457.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\ab67616d0000b2731de3187680d052813e7fd4d0.jpega8b0a2d3-519c-4230-ab78-ac7f431ad457.jpeg"
     },
     {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\ab67616d0000b2731de3187680d052813e7fd4d0.jpegd4d6303c-5666-4094-bdfa-8032cb5ef178.jpeg",
@@ -918,6 +969,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\perdeninard-3.jpg89b02320-fe37-49ce-a50b-6a01a2547101.jpg"
     },
     {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\perdeninard-3.jpgebea7803-2197-4633-9016-9da9868fb1ef.jpg",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Images/perdeninard-3.jpgebea7803-2197-4633-9016-9da9868fb1ef.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\perdeninard-3.jpgebea7803-2197-4633-9016-9da9868fb1ef.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\perdenin-ardindakiler-2022122292113.jpgf1bdcbf4-e5f8-469f-990b-05d2180efdb1.jpg",
       "SourceId": "Spotify_API",
       "SourceType": "Discovered",
@@ -950,6 +1018,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Photography-by-Snowdon-Copyright-Queen-Productions-Ltd-copy.jpga7e412f4-a801-4a65-b029-3b902b196a8b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Images/pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png"
     },
     {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\Queen 1.jpg4513fbe8-2a3a-4494-8591-0a9ae87630aa.jpg",
@@ -1241,23 +1326,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\unnamed.jpg48c01344-1853-47e8-9d87-d4aa402a71dc.jpg"
     },
     {
-      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\unnamed.jpgb59f3970-211c-4013-9c78-334addeb9889.jpg",
-      "SourceId": "Spotify_API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
-      "BasePath": "_content/Spotify_API",
-      "RelativePath": "Images/unnamed.jpgb59f3970-211c-4013-9c78-334addeb9889.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\unnamed.jpgb59f3970-211c-4013-9c78-334addeb9889.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\unnamed.jpgb809e25b-bd5e-4397-934f-15c1e407a535.jpg",
       "SourceId": "Spotify_API",
       "SourceType": "Discovered",
@@ -1292,12 +1360,12 @@
       "OriginalItemSpec": "wwwroot\\Images\\unnamed.jpge5258095-3c17-4bb3-9073-4bc9215d150a.jpg"
     },
     {
-      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\WhatsApp Image 2024-01-21 at 10.53.03.jpeg5b22fba1-b6db-4c1d-b544-aef2655036be.jpeg",
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg",
       "SourceId": "Spotify_API",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
       "BasePath": "_content/Spotify_API",
-      "RelativePath": "Images/WhatsApp Image 2024-01-21 at 10.53.03.jpeg5b22fba1-b6db-4c1d-b544-aef2655036be.jpeg",
+      "RelativePath": "Images/WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,7 +1374,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\WhatsApp Image 2024-01-21 at 10.53.03.jpeg5b22fba1-b6db-4c1d-b544-aef2655036be.jpeg"
+      "OriginalItemSpec": "wwwroot\\Images\\WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg"
     },
     {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Andrea Vanzo Soulmate.mp33b559855-5bbf-4948-8d50-f932e242c3bf.mp3",
@@ -1715,6 +1783,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\mp3\\The Weeknd Starboy (Feat. Daft Punk).mp3745901c7-e743-4c1a-bccf-932e3077d3a8.mp3"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Templates\\Confirm.html",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Templates/Confirm.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Templates\\Confirm.html"
     }
   ]
 }

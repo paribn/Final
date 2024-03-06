@@ -20,8 +20,8 @@ namespace Spotify_API.DTO.PlayList
                   .Length(1, 100).WithMessage("Can't be less than 1  more than 100  characters!");
 
 
-                RuleFor(genre => genre.AppUserId)
-                    .NotNull().WithMessage("Cannot be empty.");
+                //RuleFor(genre => genre.AppUserId)
+                //    .NotNull().WithMessage("Cannot be empty.");
 
             }
 

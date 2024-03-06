@@ -37,8 +37,8 @@ namespace Spotify_API.AutoMapper
                 .ForMember(dest => dest.albumGets, opt => opt.MapFrom(src => src.Albums.Select(x => new AlbumGetDtoForArtist
                 {
                     Id = x.Id,
-                    CoverImage = x.CoverImage,
                     Title = x.Title,
+                    CoverImage = x.CoverImage,
 
                 })))
                 .ForMember(dest => dest.MusicGet, opt => opt.MapFrom(src => src.Musics.Select(x => new MusicAlbumGetDto
@@ -47,6 +47,7 @@ namespace Spotify_API.AutoMapper
                     MusicName = x.Name,
                     MusicPhotoUrl = x.PhotoUrl,
                     MusicUrl = x.MusicUrl,
+                    AlbumName = x.Album.Title
                 })));
 
 

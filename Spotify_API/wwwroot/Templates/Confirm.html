@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet" />
+    <title>MCCB - Reset Password</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: "Roboto", sans-serif;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .font-weight-bold {
+            font-weight: 600;
+        }
+
+        .text-primary {
+            color: #1ed760;
+            font-size: large;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .mb-1 {
+            margin-bottom: 0.25rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mt-5 {
+            margin-top: 2rem;
+        }
+
+        .fs-sm {
+            font-size: 12px;
+        }
+
+        a.primary-btn {
+            padding: 0.5rem 1.25rem;
+            background-color: #1ed760;
+            border-radius: 4px;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+            a.primary-btn:hover {
+                background-color: #1ed760;
+            }
+
+        a {
+            text-align: center;
+            font-size: 12px;
+            word-break: break-all;
+        }
+
+        .container {
+            max-width: 568px;
+            padding: 2rem;
+            margin: 0 auto;
+            border: 1px solid #bec6d0;
+            border-radius: 4px;
+        }
+
+        .mccb-logo-wrapper {
+            display: flex;
+            width: max-content;
+            margin: 0 auto;
+            line-height: 1;
+        }
+
+            .mccb-logo-wrapper img {
+                height: 42px;
+                margin-bottom: 0.5rem;
+            }
+
+        .mccb-label {
+            margin-left: 8px;
+            margin-top: 6px;
+            color: #003366;
+            font-weight: 400;
+        }
+
+        .container-body {
+            color: #2a3439;
+        }
+
+        .p-with-link {
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-note {
+            margin-top: 1rem;
+            font-size: 12px;
+            color: #95989a;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 567.98px) {
+            html {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mccb-logo-wrapper">
+            <div class="mccb-label">
+                <div><span class="text-primary">Spotify</span></div>
+            </div>
+        </div>
+        <div class="container-body">
+            <p>Dear, {{FullName}}</p>
+            <p>We have received your request to reset your account password.</p>
+            <p>To proceed, please click the button below:</p>
+            <div class="text-center">
+                <a class="primary-btn" href="{{link}}">Reset Password</a>
+            </div>
+        </div>
+        <div class="footer-note text-center mb-0">
+            Do not reply to this email.
+        </div>
+    </div>
+</body>
+</html>
