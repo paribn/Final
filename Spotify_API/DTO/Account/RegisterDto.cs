@@ -11,7 +11,7 @@ namespace Spotify_API.DTO.Account
         public string Password { get; set; }
 
 
-        //public string? ConfirmPassword { get; set; }
+        public string? ConfirmPassword { get; set; }
 
         public class RegisterDtoValidator : AbstractValidator<RegisterDto>
         {
@@ -25,7 +25,7 @@ namespace Spotify_API.DTO.Account
                 RuleFor(x => x.Email)
                     .NotEmpty().WithMessage("Email field is required!")
                     .EmailAddress().WithMessage("Invalid email format.")
-                    .Must(x => IsEmailValid(x)).WithMessage("Invalid email format. Email should end with '.com' or '.ru'.");
+                    .Must(x => IsEmailValid(x)).WithMessage("Invalid email format. Email should end with '.com' '.ru' or 'az' .");
 
                 RuleFor(x => x.Password)
                  .NotEmpty().WithMessage("Password field is required!")
@@ -37,7 +37,7 @@ namespace Spotify_API.DTO.Account
 
             private bool IsEmailValid(string value)
             {
-                return Regex.IsMatch(value, @"@[a-zA-Z0-9\-\.]+\.(com|ru)$");
+                return Regex.IsMatch(value, @"@[a-zA-Z0-9\-\.]+\.(com|ru|az)$");
             }
             private bool HasLetterAndDigit(string value)
             {

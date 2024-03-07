@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Spotify_API.DTO.Account;
 using Spotify_API.Entities;
+using Spotify_API.Helpers.Enum;
 using Spotify_API.Services.Abstract;
 
 namespace Spotify_API.Services.Concrete
@@ -25,39 +26,42 @@ namespace Spotify_API.Services.Concrete
         }
 
 
-        //public async Task ConfirmEmailAsync(string userId, string token)
-        //{
-        //    if (userId == null && token == null) throw new ArgumentNullException();
+        public async Task ConfirmEmailAsync(string userId, string token)
+        {
+            if (userId == null && token == null) throw new ArgumentNullException();
 
-        //    AppUser user = await _userManager.FindByIdAsync(userId);
+            AppUser user = await _userManager.FindByIdAsync(userId);
 
-        //    if (user == null) throw new NullReferenceException();
+            if (user == null) throw new NullReferenceException();
 
-        //    await _userManager.ConfirmEmailAsync(user, token);
-        //}
+            await _userManager.ConfirmEmailAsync(user, token);
+        }
 
 
-        //public async Task<ApiResponse> RegisterAsync(RegisterDto registerDto)
-        //{
-        //    var user = _mapper.Map<AppUser>(registerDto);
+        public async Task<ApiResponse> RegisterAsync(RegisterDto registerDto)
+        {
 
-        //    if (user == null) throw new NullReferenceException();
 
-        //    IdentityResult result = await _userManager.CreateAsync(user, registerDto.Password);
+            var user = _mapper.Map<AppUser>(registerDto);
 
-        //    if (!result.Succeeded)
-        //    {
-        //        return new ApiResponse
-        //        {
-        //            ErrorMessage = result.Errors.Select(m => m.Description).ToList(),
-        //            StatusMessage = "Failed"
-        //        };
-        //    }
+            if (user == null) throw new NullReferenceException();
 
-        //    await _userManager.AddToRoleAsync(user, Roles.User.ToString());
+            IdentityResult result = await _userManager.CreateAsync(user, registerDto.Password);
 
-        //    return new ApiResponse { ErrorMessage = null, StatusMessage = "Success" };
-        //}
+            if (!result.Succeeded)
+            {
+                return new ApiResponse
+                {
+                    ErrorMessage = result.Errors.Select(m => m.Description).ToList(),
+                    StatusMessage = "Failed"
+                };
+            }
+
+            await _userManager.AddToRoleAsync(user, Roles.User.ToString());
+
+            return new ApiResponse { ErrorMessage = null, StatusMessage = "Success" };
+        }
+
 
 
         public async Task LogoutAsync()

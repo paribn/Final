@@ -15,9 +15,15 @@ namespace Spotify_API.AutoMapper
 
             //CreateMap<Music, MusicGetDto>().ReverseMap();
 
-            CreateMap<Music, MusicGetDto>()
-           .ForMember(dest => dest.Artistname, opt => opt.MapFrom(src => src.Artist.Name))
-           .ForMember(dest => dest.ArtistId, opt => opt.MapFrom(src => src.Artist.Id));
+            CreateMap<Music, MusicGetDto>();
+            //.ForMember(dest => dest.Artistname, opt => opt.MapFrom(src => src.Artist.Name))
+            //.ForMember(dest => dest.ArtistId, opt => opt.MapFrom(src => src.Artist.Id))
+            //.ForMember(dest => dest.ArtistPhoto, opt => opt.MapFrom(src => src.Artist.ArtistPhoto.Select(x => new ArtistPhotoGetDto
+            //{
+            //    Id = x.Id,
+            //    PhotoPath = x.PhotoPath,
+            //})));
+
 
 
             CreateMap<Music, MusicGetDetail>().ForMember(dest => dest.Artistname, opt => opt.MapFrom(src => src.Artist.Name))

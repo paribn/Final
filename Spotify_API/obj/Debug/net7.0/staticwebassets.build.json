@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FMfpztpOM2uuTLfZZ66M4LNpfcY2923MNwiMIsvWsP4=",
+  "Hash": "sXAmBwN3med4HWlgvQc+5qOm62tRLK9r607ntbmPfUk=",
   "Source": "Spotify_API",
   "BasePath": "_content/Spotify_API",
   "Mode": "Default",
@@ -1020,23 +1020,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\Photography-by-Snowdon-Copyright-Queen-Productions-Ltd-copy.jpga7e412f4-a801-4a65-b029-3b902b196a8b.jpg"
     },
     {
-      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png",
-      "SourceId": "Spotify_API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
-      "BasePath": "_content/Spotify_API",
-      "RelativePath": "Images/pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png"
-    },
-    {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\Queen 1.jpg4513fbe8-2a3a-4494-8591-0a9ae87630aa.jpg",
       "SourceId": "Spotify_API",
       "SourceType": "Discovered",
@@ -1358,23 +1341,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\unnamed.jpge5258095-3c17-4bb3-9073-4bc9215d150a.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg",
-      "SourceId": "Spotify_API",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
-      "BasePath": "_content/Spotify_API",
-      "RelativePath": "Images/WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg"
     },
     {
       "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Andrea Vanzo Soulmate.mp33b559855-5bbf-4948-8d50-f932e242c3bf.mp3",
@@ -1800,6 +1766,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Templates\\Confirm.html"
+    },
+    {
+      "Identity": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Templates\\resetpassword.html",
+      "SourceId": "Spotify_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\",
+      "BasePath": "_content/Spotify_API",
+      "RelativePath": "Templates/resetpassword.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Templates\\resetpassword.html"
     }
   ]
 }

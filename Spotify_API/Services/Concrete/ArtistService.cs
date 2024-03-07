@@ -81,13 +81,7 @@ namespace Spotify_API.Services.Concrete
             _context.SaveChanges();
 
 
-            //var albums = await _context.Albums.FirstOrDefaultAsync(x => x.Id == id);
-            //if (albums is null) throw new Exception("Something went wrong!");
-            //_fileService.DeleteFile(albums.CoverImage);
-
-            //_context.Albums.Remove(albums);
-            //await _context.SaveChangesAsync();
-        }
+        }  //good working
 
 
         public async Task<List<ArtistGetDto>> GetAllAsync(int? page = null, int? perPage = null, string artistName = null)
@@ -103,7 +97,7 @@ namespace Spotify_API.Services.Concrete
             {
                 int totalCount = await query.CountAsync();
                 int totalPages = (int)Math.Ceiling((double)totalCount / perPage.Value);
-                page = Math.Min(Math.Max(page.Value, 1), totalPages); // Page number validation
+                page = Math.Min(Math.Max(page.Value, 1), totalPages);
 
                 int skip = (page.Value - 1) * perPage.Value;
 
@@ -171,67 +165,9 @@ namespace Spotify_API.Services.Concrete
 
             await _context.SaveChangesAsync();
 
-        }
+        }  //working change photo 
 
 
-
-
-
-
-
-
-
-
-        //public async Task AddPhoto(ArtistPhotoCreateDto photoDto)
-        //{
-        //    var existingArtist = await _context.Artists.FirstOrDefaultAsync(a => a.Id == photoDto.ArtistId);
-        //    if (existingArtist == null)
-        //    {
-        //        throw new ArgumentException("Artist with the specified ID does not exist.");
-        //    }
-
-        //    foreach (var photo in photoDto.PhotoPath)
-        //    {
-        //        var artistPhoto = new ArtistPhoto();
-        //        _mapper.Map(photoDto, artistPhoto);
-
-        //        if (photo != null)
-        //        {
-        //            var photoPath = _fileService.UploadFile(photo);
-        //            artistPhoto.PhotoPath = photoPath;
-        //        }
-
-        //        _context.ArtistPhotos.Add(artistPhoto);
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //}
-
-
-        //public async Task UpdatePhoto(ArtistPhotoUpdateDto photoDto, int id)
-        //{
-        //    var existingPhotos = await _context.ArtistPhotos.FirstOrDefaultAsync(ap => ap.Id == id);
-
-        //    // Yeni fotoğrafları ekle
-        //    if (photoDto.PhotoPath != null)
-        //    {
-        //        if (existingPhotos.PhotoPath != null)
-        //        {
-        //            _fileService.DeleteFile(existingPhotos.PhotoPath);
-        //        }
-
-        //        existingPhotos.ProductImage.ImageName = _fileService.UploadFile(model.Photo);
-        //    }
-
-        //    // Eski fotoğrafları sil
-        //    foreach (var existingPhoto in existingPhotos.PhotoPath)
-        //    {
-        //        _context.ArtistPhotos.Remove(existingPhoto);
-        //        _fileService.DeleteFile(existingPhoto.); // Önceki fotoğrafı sil
-        //    }
-
-        //    await _context.SaveChangesAsync();
-        //}
 
 
 

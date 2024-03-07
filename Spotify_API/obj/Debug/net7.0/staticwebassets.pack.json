@@ -93,10 +93,6 @@
       "PackagePath": "staticwebassets\\Images\\The weeknd.jpg17ebe017-6515-42cd-a9a5-47160221134e.jpg"
     },
     {
-      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg",
-      "PackagePath": "staticwebassets\\Images\\WhatsApp Image 2023-09-07 at 8.30.46 AM.jpega07c52b1-e963-46b2-8e68-74acb6bf685d.jpeg"
-    },
-    {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\ab6761610000517408e77d331de7cb85d95df915.jpg9e1860c3-b8d7-4a7f-b1e3-0fd1f71ddefd.jpg",
       "PackagePath": "staticwebassets\\Images\\ab6761610000517408e77d331de7cb85d95df915.jpg9e1860c3-b8d7-4a7f-b1e3-0fd1f71ddefd.jpg"
     },
@@ -289,10 +285,6 @@
       "PackagePath": "staticwebassets\\Images\\perdeninard-3.jpgebea7803-2197-4633-9016-9da9868fb1ef.jpg"
     },
     {
-      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png",
-      "PackagePath": "staticwebassets\\Images\\pngwing.com (11).png8bb89150-4c35-4cf9-bbba-c8b8e4dafe68.png"
-    },
-    {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Images\\the weeknd the hills.jpge9225052-9227-46a7-aca1-a95acc63f430.jpg",
       "PackagePath": "staticwebassets\\Images\\the weeknd the hills.jpge9225052-9227-46a7-aca1-a95acc63f430.jpg"
     },
@@ -323,6 +315,10 @@
     {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Templates\\Confirm.html",
       "PackagePath": "staticwebassets\\Templates\\Confirm.html"
+    },
+    {
+      "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\Templates\\resetpassword.html",
+      "PackagePath": "staticwebassets\\Templates\\resetpassword.html"
     },
     {
       "Id": "C:\\Users\\Rovsen Novruzov\\Desktop\\Backpractic\\Spotify_API\\Spotify_API\\wwwroot\\mp3\\Andrea Vanzo Soulmate.mp33b559855-5bbf-4948-8d50-f932e242c3bf.mp3",

@@ -32,7 +32,6 @@ namespace Spotify_API.Services.Concrete
 
             message.From.Add(MailboxAddress.Parse(_configuration.GetValue<string>("Smtp:Mail")));
 
-            //var username = app.GetValue<string>("EmailConfig:Username");
 
 
             message.To.Add(MailboxAddress.Parse(forgotPasswordDto.Email));
@@ -40,7 +39,7 @@ namespace Spotify_API.Services.Concrete
             message.Subject = "Reset Password";
 
             string emailBody = string.Empty;
-            string path = "wwwroot/templates/confirm.html";
+            string path = "wwwroot/templates/resetpassword.html";
 
             emailBody = _fileService.ReadFile(path, emailBody);
 
@@ -59,37 +58,37 @@ namespace Spotify_API.Services.Concrete
 
         }
 
-        //public void Register(RegisterDto registerDto, string link)
-        //{
-        //    // create message
-        //    var message = new MimeMessage();
+        public void Register(RegisterDto registerDto, string link)
+        {
+            // create message
+            var message = new MimeMessage();
 
-        //    message.From.Add(MailboxAddress.Parse(_configuration.GetSection("Smtp:Mail").Value));
+            message.From.Add(MailboxAddress.Parse(_configuration.GetValue<string>("Smtp:Mail")));
 
-        //    message.To.Add(MailboxAddress.Parse(registerDto.Email));
+            message.To.Add(MailboxAddress.Parse(registerDto.Email));
 
-        //    message.Subject = "Confirm Email";
+            message.Subject = "Confirm Email";
 
-        //    string emailBody = string.Empty;
-        //    string path = "wwwroot/templates/confirm.html";
+            string emailBody = string.Empty;
+            string path = "wwwroot/templates/confirm.html";
 
-        //    emailBody = _fileService.ReadFile(path, emailBody);
+            emailBody = _fileService.ReadFile(path, emailBody);
 
-        //    emailBody = emailBody.Replace("{{link}}", link).Replace("{{FullName}}", registerDto.FullName);
+            emailBody = emailBody.Replace("{{link}}", link).Replace("{{FullName}}", registerDto.FullName);
 
-        //    message.Body = new TextPart(TextFormat.Html) { Text = emailBody };
+            message.Body = new TextPart(TextFormat.Html) { Text = emailBody };
 
 
-        //    // send email
-        //    using var smtp = new SmtpClient();
+            // send email
+            using var smtp = new SmtpClient();
 
-        //    smtp.Connect(_configuration.GetSection("Smtp:Server").Value, int.Parse(_configuration.GetSection("Smtp:Port").Value), SecureSocketOptions.StartTls);
+            smtp.Connect(_configuration.GetValue<string>("Smtp:Server"), int.Parse(_configuration.GetValue<string>("Smtp:Port")), SecureSocketOptions.StartTls);
 
-        //    smtp.Authenticate(_configuration.GetSection("Smtp:Mail").Value, _configuration.GetSection("Smtp:Password").Value);
+            smtp.Authenticate(_configuration.GetValue<string>("Smtp:Mail"), _configuration.GetValue<string>("Smtp:Password"));
 
-        //    smtp.Send(message);
+            smtp.Send(message);
 
-        //    smtp.Disconnect(true);
-        //}
+            smtp.Disconnect(true);
+        }
     }
 }
