@@ -20,7 +20,7 @@ namespace Spotify_API.DTO.Account
                 RuleFor(u => u.FullName).NotNull().NotEmpty().Length(5, 50);
 
                 RuleFor(x => x.Username)
-               .NotEmpty().WithMessage("UserName field is required!");
+               .NotEmpty().Length(4, 50).WithMessage("UserName field is required!");
 
                 RuleFor(x => x.Email)
                     .NotEmpty().WithMessage("Email field is required!")

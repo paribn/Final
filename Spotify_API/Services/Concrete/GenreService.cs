@@ -78,6 +78,7 @@ namespace Spotify_API.Services.Concrete
                .FirstOrDefaultAsync(g => g.Id == id);
 
             var genreDetailDto = _mapper.Map<GenreGetDetail>(genre);
+
             return genreDetailDto;
         }
 

@@ -15,27 +15,28 @@ namespace Spotify_API.AutoMapper
 
             //CreateMap<Music, MusicGetDto>().ReverseMap();
 
-            CreateMap<Music, MusicGetDto>();
-            //.ForMember(dest => dest.Artistname, opt => opt.MapFrom(src => src.Artist.Name))
-            //.ForMember(dest => dest.ArtistId, opt => opt.MapFrom(src => src.Artist.Id))
-            //.ForMember(dest => dest.ArtistPhoto, opt => opt.MapFrom(src => src.Artist.ArtistPhoto.Select(x => new ArtistPhotoGetDto
-            //{
-            //    Id = x.Id,
-            //    PhotoPath = x.PhotoPath,
-            //})));
+            CreateMap<Music, MusicGetDto>().ReverseMap();
+
 
 
 
             CreateMap<Music, MusicGetDetail>().ForMember(dest => dest.Artistname, opt => opt.MapFrom(src => src.Artist.Name))
-                .ForMember(dest => dest.About, opt => opt.MapFrom(src => src.Artist.About))
                 .ForMember(dest => dest.ArtistType, opt => opt.MapFrom(src => src.Artist.ArtistType))
-                .ForMember(dest => dest.AlbumName, opt => opt.MapFrom(src => src.Album.Title));
+                .ForMember(dest => dest.AlbumName, opt =>
+                opt.MapFrom(src => src.Album.Title));
 
 
             CreateMap<Music, MusicAlbumGetDto>().
                 ForMember(dest => dest.MusicName, opt => opt.MapFrom(src => src.Name))
-                .ForMember(dest => dest.MusicPhotoUrl, opt => opt.MapFrom(src => src.PhotoUrl))
-               .ForMember(dest => dest.AlbumName, opt => opt.MapFrom(src => src.Album.Title));
+                .ForMember(dest => dest.MusicPhotoUrl, opt => opt.MapFrom(src => src.PhotoUrl));
+
+            CreateMap<Music, MusicGet>()
+                .ForMember(dest => dest.MusicName, opt
+                => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.MusicPhotoUrl,
+                opt => opt.MapFrom(src => src.PhotoUrl))
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.MusicUrl, opt => opt.MapFrom(src => src.MusicUrl));                //.ReverseMap();
 
 
 

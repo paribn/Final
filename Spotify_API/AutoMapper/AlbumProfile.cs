@@ -30,7 +30,7 @@ namespace Spotify_API.AutoMapper
                     MusicName = m.Name,
                     MusicUrl = m.MusicUrl,
                     MusicPhotoUrl = m.PhotoUrl,
-                    AlbumName = m.Album.Title,
+                    AlbumName = m.Album.Title
                 })));
 
 

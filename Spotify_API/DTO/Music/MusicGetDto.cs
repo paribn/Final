@@ -1,7 +1,4 @@
-﻿using Spotify_API.DTO.Album;
-using Spotify_API.DTO.Artist;
-
-namespace Spotify_API.DTO.Music
+﻿namespace Spotify_API.DTO.Music
 {
     public class MusicGetDto
     {
@@ -12,14 +9,14 @@ namespace Spotify_API.DTO.Music
         public string PhotoUrl { get; set; }
 
 
-        public string? Artistname { get; set; }
-        public int? ArtistId { get; set; }
+        //public string? Artistname { get; set; }
+        //public int? ArtistId { get; set; }
 
-        public List<ArtistPhotoGetDto> ArtistPhoto { get; set; }
+        //public List<ArtistPhotoGetDto> ArtistPhoto { get; set; }
 
         //ALL SEARCH METHOD
         //public ArtistGetDto Artist { get; set; }
-        public AlbumGetDto Album { get; set; }
+        //public AlbumGetDto Album { get; set; }
         //public GenreGetDto Genre { get; set; }
     }
 }

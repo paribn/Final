@@ -8,10 +8,8 @@
         public string MusicUrl { get; set; }
         public string PhotoUrl { get; set; }
 
+        public int? ArtistId { get; set; }
         public string? Artistname { get; set; }
-
-        public string? About { get; set; }
-
 
         public string? AlbumName { get; set; }
 

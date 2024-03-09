@@ -8,7 +8,10 @@ namespace Spotify_API.DTO.Genre
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<MusicGetDto> Musics { get; set; }
+
+
+
+        public List<MusicAlbumGetDto> Musics { get; set; }
 
     }
 }

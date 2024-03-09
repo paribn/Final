@@ -84,7 +84,7 @@ namespace Spotify_API
             builder.Services.AddScoped<IGenreService, GenreService>();
             builder.Services.AddScoped<IArtistService, ArtistService>();
             builder.Services.AddScoped<IMusicService, MusicService>();
-            builder.Services.AddScoped<IPlaylistService, PlaylistService>();
+            //builder.Services.AddScoped<IPlaylistService, PlaylistService>();
 
 
             builder.Services.AddSwaggerGen(opt =>
